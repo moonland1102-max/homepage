@@ -1,0 +1,5852 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison de Ju Eun | The Empress's Secret Garden</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ======================================
+   MAISON DE JU EUN
+   THE EMPRESS'S SECRET GARDEN
+====================================== */
+
+:root{
+    --gold:#b89b60;
+    --light-gold:#f1dcac;
+    --ivory:#fff9ef;
+    --cream:#efe3d0;
+    --rose:#c79aaf;
+    --wine:#542b40;
+    --dark:#291c29;
+    --green:#304b40;
+    --ink:#51434a;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:125px;
+}
+
+body{
+    font-family:'Noto Serif KR',serif;
+    background:
+        radial-gradient(ellipse at top left,#f8e9dd,transparent 40%),
+        radial-gradient(ellipse at bottom right,#dfbecb,transparent 40%),
+        #eee3d3;
+    color:var(--ink);
+    line-height:2;
+    word-break:keep-all;
+    overflow-x:hidden;
+}
+
+h1,h2,h3,h4,.english{
+    font-family:'Cormorant Garamond',Georgia,serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,input{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+button:disabled{
+    opacity:.55;
+    cursor:default;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+    outline:3px solid #c68da5;
+    outline-offset:4px;
+}
+
+[hidden]{
+    display:none!important;
+}
+
+img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+::selection{
+    background:var(--wine);
+    color:white;
+}
+
+.eyebrow{
+    font-family:'Cinzel',serif;
+    font-size:11px;
+    letter-spacing:3px;
+    color:#93703b;
+}
+
+.royal-label{
+    font-family:'Cinzel',serif;
+    font-size:11px;
+    letter-spacing:4px;
+    color:var(--light-gold);
+}
+
+.ornament{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    color:var(--gold);
+    font-size:24px;
+    margin:22px 0;
+}
+
+.ornament::before,
+.ornament::after{
+    content:"";
+    height:1px;
+    flex:1;
+    background:linear-gradient(
+        to right,transparent,currentColor,transparent
+    );
+}
+
+.gold-button,
+.wine-button{
+    display:inline-block;
+    padding:13px 24px;
+    border:1px solid var(--gold);
+    font-size:13px;
+    transition:.3s;
+    text-align:center;
+}
+
+.gold-button{
+    background:linear-gradient(
+        135deg,#f5e3b9,#b48e4d,#f0dcaf
+    );
+    color:var(--dark);
+}
+
+.wine-button{
+    background:var(--wine);
+    color:var(--light-gold);
+}
+
+.gold-button:hover:not(:disabled),
+.wine-button:hover:not(:disabled){
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px #542b4030;
+}
+
+/* ======================================
+   사진과 내장 일러스트
+====================================== */
+
+.art{
+    position:relative;
+    min-height:180px;
+    overflow:hidden;
+    background:#e9d6c2;
+}
+
+.art svg{
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+.art img{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:opacity .8s;
+}
+
+.art img.loaded{
+    opacity:1;
+}
+
+.photo-frame{
+    padding:6px;
+    background:#f3e5ce;
+    border:1px solid var(--gold);
+    margin:22px 0;
+}
+
+.photo-frame .art{
+    height:280px;
+}
+
+.photo-caption{
+    text-align:center;
+    padding:9px;
+    color:#92703b;
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    font-style:italic;
+}
+
+/* ======================================
+   황궁 표지
+====================================== */
+
+.top-ribbon{
+    background:#20151f;
+    color:var(--light-gold);
+    text-align:center;
+    padding:14px;
+    font-family:'Cinzel',serif;
+    font-size:11px;
+    letter-spacing:4px;
+    border-bottom:1px solid var(--gold);
+}
+
+.hero{
+    position:relative;
+    min-height:94vh;
+    display:flex;
+    align-items:center;
+    padding:85px 7%;
+    color:var(--ivory);
+    overflow:hidden;
+    background:var(--dark);
+}
+
+.hero-art{
+    position:absolute;
+    inset:0;
+    height:100%;
+}
+
+.hero-shade{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(30,18,28,.93),
+        rgba(45,25,39,.62) 55%,
+        rgba(40,25,34,.18)
+    );
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:18px;
+    border:1px solid var(--light-gold);
+    z-index:3;
+    pointer-events:none;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:27px;
+    border:1px solid #f1dcac55;
+    z-index:3;
+    pointer-events:none;
+}
+
+.corner{
+    position:absolute;
+    font-size:75px;
+    color:var(--light-gold);
+    line-height:1;
+    z-index:4;
+    pointer-events:none;
+}
+
+.tl{top:18px;left:20px;}
+.tr{top:18px;right:20px;transform:scaleX(-1);}
+.bl{bottom:18px;left:20px;transform:scaleY(-1);}
+.br{bottom:18px;right:20px;transform:scale(-1);}
+
+.hero-layout{
+    position:relative;
+    z-index:5;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:60px;
+    max-width:1350px;
+    width:100%;
+    margin:auto;
+    align-items:center;
+}
+
+.hero-copy{
+    animation:entrance 1s ease both;
+}
+
+@keyframes entrance{
+    from{opacity:0;transform:translateY(25px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.hero-crown{
+    width:145px;
+    margin-bottom:20px;
+    filter:drop-shadow(0 0 15px #f1dcac55);
+}
+
+.hero h1{
+    font-size:clamp(65px,9vw,145px);
+    font-weight:400;
+    line-height:.95;
+    color:#fff2da;
+    margin:22px 0;
+    text-shadow:0 8px 25px #0005;
+}
+
+.hero h1 span{
+    display:block;
+    font-style:italic;
+    color:#efd0da;
+}
+
+.korean-name{
+    font-size:23px;
+    letter-spacing:13px;
+    margin:18px 0;
+}
+
+.hero-subtitle{
+    font-size:36px;
+    font-style:italic;
+    color:var(--light-gold);
+}
+
+.hero p{
+    font-size:14px;
+    max-width:620px;
+    color:#f4e4e0;
+}
+
+.hero-note{
+    border:1px solid #f1dcac55;
+    padding:16px;
+    background:#291c2755;
+    backdrop-filter:blur(5px);
+    font-size:12px;
+    color:var(--light-gold);
+    margin:23px 0;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:24px;
+}
+
+/* 황실 초대장 */
+
+.invitation{
+    position:relative;
+    background:radial-gradient(
+        ellipse at top,#fffdf5,#eedcc1
+    );
+    border:7px double var(--gold);
+    color:var(--wine);
+    padding:35px 27px;
+    box-shadow:
+        13px 18px 0 #d6b8b544,
+        0 20px 60px #0005;
+    text-align:center;
+    transform:rotate(-2deg);
+}
+
+.invitation h2{
+    font-size:48px;
+    line-height:1.05;
+    font-weight:400;
+    margin:16px 0;
+}
+
+.invitation .art{
+    height:215px;
+    margin:20px 0;
+    border:1px solid var(--gold);
+}
+
+.invitation p{
+    color:#775963;
+    font-size:13px;
+}
+
+.wax{
+    display:grid;
+    place-items:center;
+    width:76px;
+    height:76px;
+    border:5px double #ca9a8d;
+    border-radius:48% 51% 45% 50%;
+    color:var(--light-gold);
+    background:radial-gradient(
+        circle at 30% 25%,
+        #ad6680,#69334e,#432036
+    );
+    box-shadow:4px 7px 12px #542b4035;
+    font-family:'Cormorant Garamond',serif;
+    font-size:31px;
+    font-style:italic;
+    margin:20px auto 8px;
+    transition:.4s;
+}
+
+button.wax:hover{
+    transform:rotate(-10deg) scale(1.08);
+}
+
+#sparkles{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:2;
+}
+
+.sparkle{
+    position:absolute;
+    color:#ffecc2;
+    animation:twinkle 5s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.1;transform:scale(.7);}
+    50%{opacity:.95;transform:scale(1.2);}
+}
+
+/* ======================================
+   황궁 메뉴
+====================================== */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#291c27f5;
+    color:var(--light-gold);
+    border-bottom:4px double var(--gold);
+    backdrop-filter:blur(10px);
+}
+
+.nav-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:5px 24px;
+    padding:13px 15px;
+}
+
+.nav-links a{
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.nav-status{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    max-width:900px;
+    margin:auto;
+    padding:0 20px 12px;
+    font-size:11px;
+}
+
+.progress-track{
+    flex:1;
+    height:7px;
+    background:#ffffff25;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(
+        90deg,#9f793c,#f3dfac
+    );
+    transition:width .5s;
+}
+
+/* ======================================
+   콘셉트 소개
+====================================== */
+
+.concept{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    max-width:1200px;
+    width:92%;
+    margin:60px auto;
+    background:var(--ivory);
+    border:5px double var(--gold);
+    box-shadow:0 15px 40px #542b4015;
+}
+
+.concept .art{
+    min-height:430px;
+}
+
+.concept-body{
+    padding:45px;
+}
+
+.concept h2{
+    font-size:50px;
+    font-weight:400;
+    line-height:1.15;
+    color:var(--wine);
+    margin:18px 0;
+}
+
+.concept p{
+    font-size:14px;
+    margin:15px 0;
+}
+
+/* ======================================
+   황실 여권과 캐릭터
+====================================== */
+
+.passport{
+    max-width:1200px;
+    width:92%;
+    margin:60px auto;
+    padding:13px;
+    background:#fcf3e4;
+    border:1px solid var(--gold);
+    box-shadow:0 15px 40px #542b4018;
+}
+
+.passport-inner{
+    border:1px solid var(--gold);
+    padding:27px;
+}
+
+.passport-cover{
+    background:radial-gradient(
+        ellipse at top,#694559,#342331
+    );
+    color:var(--light-gold);
+    padding:32px;
+    text-align:center;
+    border:5px double var(--gold);
+}
+
+.passport-cover h2{
+    font-size:58px;
+    font-weight:400;
+    line-height:1.2;
+    margin:15px 0;
+}
+
+.passport-cover p{
+    font-size:13px;
+    color:#e7d1d8;
+}
+
+.visitor-card{
+    display:grid;
+    grid-template-columns:100px 1fr;
+    align-items:center;
+    max-width:650px;
+    margin:25px auto;
+    padding:18px;
+    border:1px solid var(--gold);
+    background:#ffffff08;
+    text-align:left;
+    gap:20px;
+}
+
+.visitor-emblem{
+    width:90px;
+    height:105px;
+    border:5px double var(--gold);
+    border-radius:60px 60px 4px 4px;
+    display:grid;
+    place-items:center;
+    font-size:46px;
+    color:var(--light-gold);
+    background:#9c6680;
+}
+
+#visitorDisplay{
+    font-size:24px;
+    color:#fff0d0;
+}
+
+#visitorRank{
+    font-size:12px;
+    color:var(--light-gold);
+}
+
+.passport-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:25px;
+}
+
+.room-card{
+    position:relative;
+    background:linear-gradient(#fffaf1,#f0e2cb);
+    padding:20px 14px;
+    border:1px solid #cbb38a;
+    text-align:center;
+    transition:.3s;
+}
+
+.room-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px #542b4018;
+}
+
+.room-card small{
+    color:#94743c;
+    font-family:'Cinzel',serif;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.room-stamp{
+    width:82px;
+    height:82px;
+    border:3px dashed #c3ac86;
+    border-radius:50%;
+    color:#bda37a;
+    background:#e9ddc6;
+    display:grid;
+    place-items:center;
+    font-size:35px;
+    margin:14px auto;
+}
+
+.room-card.collected .room-stamp{
+    background:radial-gradient(circle,#aa6a80,#633149);
+    border:5px double #dfc092;
+    color:var(--light-gold);
+    transform:rotate(-7deg);
+    animation:stampIn .5s ease both;
+}
+
+@keyframes stampIn{
+    from{opacity:.3;transform:scale(1.4) rotate(-15deg);}
+    to{opacity:1;transform:scale(1) rotate(-7deg);}
+}
+
+.room-card strong{
+    display:block;
+    color:var(--wine);
+    font-size:14px;
+}
+
+.room-card .english{
+    font-size:22px;
+    color:#92703b;
+}
+
+.room-state{
+    font-size:11px;
+    color:#92703b;
+}
+
+.passport-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:25px;
+    font-size:12px;
+}
+
+/* ======================================
+   자기소개 본문
+====================================== */
+
+main{
+    max-width:1300px;
+    margin:auto;
+    padding:55px 25px;
+}
+
+.intro{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 50px;
+}
+
+.intro h2{
+    font-size:clamp(45px,7vw,78px);
+    color:var(--wine);
+    font-weight:400;
+    line-height:1.15;
+    margin:16px 0;
+}
+
+.intro p{
+    font-size:14px;
+}
+
+.spread{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+}
+
+.panel{
+    position:relative;
+    background:var(--ivory);
+    border:1px solid var(--gold);
+    padding:42px;
+    box-shadow:0 12px 30px #542b400d;
+    min-width:0;
+}
+
+.panel::before{
+    content:"";
+    position:absolute;
+    inset:8px;
+    border:1px solid #dac6a0;
+    pointer-events:none;
+}
+
+.panel::after{
+    content:"❦";
+    position:absolute;
+    right:20px;
+    top:12px;
+    color:var(--gold);
+    font-size:35px;
+    pointer-events:none;
+}
+
+.wide{
+    grid-column:1/-1;
+}
+
+.chapter{
+    font-family:'Cinzel',serif;
+    color:#92703b;
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+.panel h2{
+    font-size:56px;
+    font-weight:400;
+    line-height:1.15;
+    color:var(--wine);
+    margin:14px 0;
+}
+
+.korean-title{
+    color:#97727e;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+.panel p{
+    font-size:14px;
+    margin:15px 0;
+}
+
+.quote{
+    font-family:'Cormorant Garamond',serif;
+    font-size:29px;
+    font-style:italic;
+    color:var(--wine);
+    background:#eee3d477;
+    border-top:1px solid var(--gold);
+    border-bottom:1px solid var(--gold);
+    padding:23px 18px;
+    text-align:center;
+    margin:25px 0;
+}
+
+.stamp-zone{
+    text-align:center;
+    border-top:1px solid #ceb78f;
+    padding-top:20px;
+    margin-top:30px;
+}
+
+.stamp-zone p{
+    font-size:12px;
+    color:#92703b;
+}
+
+.stamp-button{
+    border:4px double var(--gold);
+    background:var(--wine);
+    color:var(--light-gold);
+    padding:11px 24px;
+    font-size:13px;
+}
+
+.stamp-button.done{
+    background:#385747;
+}
+
+.two-column{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    align-items:center;
+}
+
+/* 황실 프로필 */
+
+.crest{
+    width:155px;
+    height:185px;
+    margin:18px auto 30px;
+    border:5px double var(--gold);
+    border-radius:100px 100px 5px 5px;
+    background:radial-gradient(
+        circle at top,#f8e3df,#c9a0b1
+    );
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.crest .english{
+    color:var(--wine);
+    font-size:62px;
+    font-style:italic;
+    line-height:1;
+}
+
+.profile-row{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:15px;
+    padding:12px 0;
+    border-bottom:1px solid #e2d4b9;
+    font-size:14px;
+}
+
+.profile-label{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    color:#96743d;
+    font-weight:600;
+}
+
+/* 일기장 페이지 */
+
+.diary-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:20px 0;
+}
+
+.diary-tab{
+    background:#f0e2ce;
+    color:var(--wine);
+    border:1px solid var(--gold);
+    padding:8px 13px;
+    font-size:12px;
+}
+
+.diary-tab.active{
+    background:var(--wine);
+    color:var(--light-gold);
+}
+
+.diary-page{
+    position:relative;
+    background:#fbf0df;
+    border:1px solid #d4ba8c;
+    padding:25px;
+    min-height:330px;
+}
+
+.diary-page h3{
+    font-size:31px;
+    font-style:italic;
+    font-weight:400;
+    color:var(--wine);
+}
+
+.diary-page .page-number{
+    text-align:right;
+    color:#92703b;
+    font-size:11px;
+}
+
+.diary-sign{
+    text-align:right;
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    font-style:italic;
+    color:#9e7483;
+}
+
+/* ======================================
+   왕관 보물실
+====================================== */
+
+.treasury{
+    background:radial-gradient(
+        ellipse at top,#684252,#2d1d2b
+    );
+    color:#f5e7d4;
+}
+
+.treasury h2,
+.treasury .chapter,
+.treasury .korean-title,
+.treasury .stamp-zone p{
+    color:var(--light-gold);
+}
+
+.crown-display{
+    border:1px solid var(--gold);
+    background:#251923;
+    padding:7px;
+}
+
+.crown-display .art{
+    height:340px;
+}
+
+.crown-display .photo-caption{
+    color:var(--light-gold);
+}
+
+.crown-workshop{
+    background:#21162066;
+    border:1px solid var(--gold);
+    text-align:center;
+    padding:25px;
+}
+
+.crown-workshop h3{
+    font-size:34px;
+    font-weight:400;
+    color:var(--light-gold);
+}
+
+#restorationCrown svg{
+    width:100%;
+    max-width:400px;
+}
+
+.gem-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:28px;
+}
+
+.gem-card{
+    padding:24px 18px;
+    background:#ffffff07;
+    border:1px solid var(--gold);
+    text-align:center;
+}
+
+.gem-card h3{
+    color:var(--light-gold);
+    font-size:32px;
+    font-weight:400;
+}
+
+.gem-card p{
+    font-size:13px;
+    color:#ead7de;
+}
+
+.gem-shape{
+    width:65px;
+    height:85px;
+    background:var(--gold);
+    clip-path:polygon(
+        50% 0%,95% 30%,80% 77%,
+        50% 100%,20% 77%,5% 30%
+    );
+    display:grid;
+    place-items:center;
+    margin:0 auto 15px;
+}
+
+.gem-shape span{
+    width:57px;
+    height:76px;
+    clip-path:inherit;
+}
+
+.ruby span{
+    background:conic-gradient(
+        #efb0c1,#842c4b,#b65073,#601d38,#efb0c1
+    );
+}
+
+.emerald span{
+    background:conic-gradient(
+        #c2e0cd,#28664d,#61b390,#21523c,#c2e0cd
+    );
+}
+
+.sapphire span{
+    background:conic-gradient(
+        #c1d6eb,#36558c,#7294ce,#243761,#c1d6eb
+    );
+}
+
+.success{
+    border:1px solid var(--gold);
+    background:#416e5755;
+    color:var(--light-gold);
+    padding:15px;
+    text-align:center;
+    margin:20px 0;
+}
+
+/* ======================================
+   황실 살롱
+====================================== */
+
+.hobby-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin:28px 0;
+}
+
+.hobby{
+    border:1px solid var(--gold);
+    border-radius:110px 110px 0 0;
+    background:#f9eee0;
+    text-align:center;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.hobby:hover{
+    transform:translateY(-7px);
+    box-shadow:0 10px 20px #542b4020;
+}
+
+.hobby .art{
+    height:240px;
+}
+
+.hobby-body{
+    padding:20px 14px;
+}
+
+.hobby h3{
+    color:var(--wine);
+    font-size:33px;
+    font-weight:400;
+}
+
+.hobby p{
+    font-size:13px;
+}
+
+.hobby strong{
+    font-size:12px;
+    color:#92703b;
+}
+
+.tea-banner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border:5px double var(--gold);
+    background:var(--wine);
+    color:var(--light-gold);
+    margin-top:30px;
+}
+
+.tea-banner .art{
+    min-height:350px;
+}
+
+.tea-body{
+    padding:30px;
+    text-align:center;
+}
+
+.tea-body h3{
+    font-size:43px;
+    line-height:1.2;
+    font-style:italic;
+    font-weight:400;
+    margin:15px 0;
+}
+
+.tea-body p{
+    color:#f0dce3;
+}
+
+.choice-row{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:18px 0;
+}
+
+.tea-choice{
+    border:1px solid var(--gold);
+    background:transparent;
+    color:var(--light-gold);
+    padding:8px 14px;
+    font-size:12px;
+}
+
+.tea-choice.active{
+    background:var(--light-gold);
+    color:var(--wine);
+}
+
+/* ======================================
+   드레스 디자인 미션
+====================================== */
+
+.dress-studio{
+    border:5px double var(--gold);
+    background:#ead6cd;
+    padding:8px;
+}
+
+#dressPreview{
+    height:510px;
+    overflow:hidden;
+}
+
+#dressPreview svg{
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+.style-title{
+    font-size:41px;
+    font-style:italic;
+    font-weight:400;
+    color:var(--wine);
+    line-height:1.2;
+}
+
+.palette{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.colour-choice{
+    width:47px;
+    height:47px;
+    border:4px double var(--gold);
+    border-radius:50%;
+    transition:.3s;
+}
+
+.colour-choice:hover,
+.colour-choice.active{
+    transform:translateY(-6px);
+    box-shadow:0 6px 12px #542b4033;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:20px 0;
+}
+
+.tags span{
+    background:#eedce3;
+    border:1px solid #cbb18a;
+    color:var(--wine);
+    padding:5px 13px;
+    font-size:12px;
+}
+
+.style-gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:28px;
+}
+
+.style-gallery .art{
+    height:250px;
+}
+
+/* ======================================
+   비밀 서신
+====================================== */
+
+.letter-room{
+    padding:35px;
+    background:radial-gradient(
+        ellipse,#fff5e3,#e1c9a7
+    );
+    border:1px solid var(--gold);
+    text-align:center;
+}
+
+.letter-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:46px;
+    font-style:italic;
+    color:var(--wine);
+}
+
+.envelope{
+    display:block;
+    position:relative;
+    width:min(100%,390px);
+    height:240px;
+    background:#efd9b7;
+    border:2px solid var(--gold);
+    margin:35px auto 25px;
+    box-shadow:0 15px 30px #542b4025;
+    perspective:900px;
+}
+
+.envelope::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:#e1c49e;
+    clip-path:polygon(0 100%,50% 38%,100% 100%);
+}
+
+.envelope-flap{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(#fff3da,#ead0aa);
+    clip-path:polygon(0 0,100% 0,50% 65%);
+    transform-origin:top;
+    transition:transform .7s;
+}
+
+.envelope .wax{
+    position:absolute;
+    left:50%;
+    top:63%;
+    transform:translate(-50%,-50%);
+    margin:0;
+}
+
+.envelope.opened .envelope-flap{
+    transform:rotateX(175deg);
+}
+
+.envelope.opened .wax{
+    opacity:0;
+}
+
+.secret-letter{
+    max-width:780px;
+    margin:30px auto 0;
+    background:#fffaf0;
+    border:5px double var(--gold);
+    padding:38px;
+    text-align:left;
+    animation:entrance .7s ease;
+}
+
+.secret-letter .art{
+    height:230px;
+    margin:22px 0;
+}
+
+.signature{
+    font-family:'Cormorant Garamond',serif;
+    text-align:right;
+    color:var(--wine);
+    font-size:34px;
+    font-style:italic;
+    margin-top:24px;
+}
+
+/* ======================================
+   황후의 비밀 정원
+====================================== */
+
+.garden{
+    background:radial-gradient(
+        ellipse at top,#426a56,#233f34
+    );
+    color:#f5e8d2;
+}
+
+.garden h2,
+.garden .chapter,
+.garden .korean-title,
+.garden .stamp-zone p{
+    color:var(--light-gold);
+}
+
+.garden-display{
+    background:#d4d9c4;
+    border:5px double var(--gold);
+    padding:6px;
+    margin:25px 0;
+}
+
+#gardenPreview svg{
+    display:block;
+    width:100%;
+    min-height:240px;
+}
+
+.flower-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin:24px 0;
+}
+
+.flower-card{
+    text-align:center;
+    border:1px solid var(--gold);
+    background:#ffffff09;
+    padding:23px 15px;
+}
+
+.flower-card h3{
+    font-size:27px;
+    color:var(--light-gold);
+    font-weight:400;
+}
+
+.flower-card p{
+    font-size:13px;
+}
+
+.flower-icon{
+    font-size:43px;
+    color:#f1c3d3;
+}
+
+.garden-message{
+    color:#e9d2a7;
+    text-align:center;
+    font-size:14px;
+}
+
+/* ======================================
+   미래의 왕좌
+====================================== */
+
+.declaration{
+    background:radial-gradient(
+        ellipse at top,#55435b,#302337
+    );
+    color:#f6e9d6;
+    text-align:center;
+}
+
+.declaration h2,
+.declaration .chapter,
+.declaration .korean-title,
+.declaration .stamp-zone p{
+    color:var(--light-gold);
+}
+
+.declaration p{
+    max-width:850px;
+    margin:20px auto;
+}
+
+.goal-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin:28px 0;
+}
+
+.goal-card{
+    border:1px solid var(--gold);
+    background:#ffffff08;
+    padding:28px 17px;
+}
+
+.goal-card h3{
+    color:var(--light-gold);
+    font-size:32px;
+    font-weight:400;
+}
+
+.goal-card p{
+    font-size:13px;
+}
+
+.goal-icon{
+    font-size:40px;
+    color:var(--light-gold);
+}
+
+.quiz{
+    max-width:750px;
+    margin:35px auto;
+    background:#fcf4e4;
+    color:var(--wine);
+    border:5px double var(--gold);
+    padding:30px;
+    text-align:left;
+}
+
+.quiz h3{
+    text-align:center;
+    font-size:35px;
+    font-weight:400;
+}
+
+.quiz-option{
+    display:block;
+    width:100%;
+    padding:12px 16px;
+    margin:10px 0;
+    background:#fffaf2;
+    color:var(--wine);
+    border:1px solid #cdb58b;
+    text-align:left;
+    font-size:13px;
+}
+
+.quiz-option.correct{
+    background:#dbe9da;
+    border-color:#649071;
+}
+
+.quiz-option.wrong{
+    background:#efd9dc;
+    border-color:#aa6b7b;
+}
+
+/* ======================================
+   히든 엔딩 및 명예 증서
+====================================== */
+
+.ending{
+    max-width:1100px;
+    width:92%;
+    margin:40px auto 70px;
+    padding:45px 25px;
+    background:radial-gradient(
+        ellipse at top,#79536a,#352333
+    );
+    color:var(--light-gold);
+    border:6px double var(--gold);
+    text-align:center;
+}
+
+.ending h2{
+    font-size:56px;
+    font-weight:400;
+    line-height:1.15;
+    margin:15px 0;
+}
+
+.ending p{
+    font-size:14px;
+    margin:15px 0;
+}
+
+.certificate{
+    max-width:760px;
+    margin:30px auto;
+    padding:40px 25px;
+    background:#fff9ec;
+    color:var(--wine);
+    border:9px double var(--gold);
+}
+
+.certificate h3{
+    font-size:48px;
+    font-weight:400;
+    line-height:1.15;
+}
+
+.certificate-name{
+    display:inline-block;
+    border-bottom:1px solid var(--gold);
+    font-size:29px;
+    font-weight:600;
+    padding:8px 30px;
+    margin:20px 0;
+    overflow-wrap:anywhere;
+}
+
+/* ======================================
+   팝업, 토스트
+====================================== */
+
+dialog{
+    position:fixed;
+    inset:0;
+    margin:auto;
+    width:92%;
+    max-width:580px;
+    max-height:90vh;
+    overflow:auto;
+    padding:35px;
+    background:#fcf2e0;
+    border:6px double var(--gold);
+    color:var(--wine);
+    text-align:center;
+    box-shadow:0 25px 65px #0005;
+}
+
+dialog::backdrop{
+    background:#241721c9;
+    backdrop-filter:blur(6px);
+}
+
+dialog h2{
+    font-size:45px;
+    font-weight:400;
+    line-height:1.2;
+    margin:15px 0;
+}
+
+dialog p{
+    font-size:14px;
+    margin:15px 0;
+}
+
+dialog .art{
+    height:200px;
+    border:1px solid var(--gold);
+    margin:20px 0;
+}
+
+.royal-input{
+    width:min(100%,340px);
+    background:#fffaf0;
+    border:1px solid var(--gold);
+    color:var(--wine);
+    padding:12px;
+    text-align:center;
+    font-size:14px;
+    margin:15px 0;
+}
+
+#toast{
+    position:fixed;
+    z-index:999;
+    bottom:25px;
+    left:50%;
+    transform:translate(-50%,30px);
+    background:#392633;
+    color:var(--light-gold);
+    border:2px solid var(--gold);
+    padding:15px 25px;
+    max-width:92%;
+    opacity:0;
+    pointer-events:none;
+    transition:.4s;
+    font-size:13px;
+    text-align:center;
+}
+
+#toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+/* ======================================
+   마지막 인사
+====================================== */
+
+footer{
+    background:linear-gradient(#482c3e,#271b26);
+    color:#ecd8b7;
+    padding:60px 20px 35px;
+    text-align:center;
+    border-top:5px double var(--gold);
+}
+
+footer h2{
+    font-size:54px;
+    font-style:italic;
+    font-weight:400;
+}
+
+footer p{
+    font-size:13px;
+    margin:15px 0;
+}
+
+/* 반응형 */
+
+@media(max-width:950px){
+
+    .hero-layout,
+    .concept,
+    .spread,
+    .two-column,
+    .tea-banner{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:80px 30px;
+    }
+
+    .hero-copy{
+        text-align:center;
+    }
+
+    .hero-crown{
+        margin:0 auto;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .invitation{
+        max-width:480px;
+        margin:auto;
+        transform:none;
+    }
+
+    .wide{
+        grid-column:auto;
+    }
+
+    .hero-shade{
+        background:#291c2799;
+    }
+
+    .hobby-grid,
+    .flower-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .concept .art{
+        min-height:300px;
+        height:300px;
+    }
+
+}
+
+@media(max-width:550px){
+
+    html{
+        scroll-padding-top:175px;
+    }
+
+    .hero h1{
+        font-size:70px;
+    }
+
+    .hero-subtitle{
+        font-size:27px;
+    }
+
+    .corner{
+        font-size:40px;
+    }
+
+    .top-ribbon{
+        font-size:9px;
+        letter-spacing:2px;
+    }
+
+    .panel,
+    .concept-body,
+    .letter-room,
+    .secret-letter,
+    .passport-inner,
+    .quiz{
+        padding:25px 18px;
+    }
+
+    main{
+        padding:35px 12px;
+    }
+
+    .panel h2,
+    .concept h2,
+    .passport-cover h2{
+        font-size:42px;
+    }
+
+    .passport-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gem-grid,
+    .goal-grid,
+    .style-gallery{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        gap:4px 14px;
+    }
+
+    .nav-links a{
+        font-size:16px;
+    }
+
+    .profile-row{
+        grid-template-columns:80px 1fr;
+    }
+
+    .profile-label{
+        font-size:18px;
+    }
+
+    .hobby .art{
+        height:180px;
+    }
+
+    .hobby-body{
+        padding:15px 8px;
+    }
+
+    #dressPreview{
+        height:390px;
+    }
+
+    .ending h2{
+        font-size:40px;
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,*::before,*::after{
+        animation:none!important;
+        transition:none!important;
+    }
+
+}
+
+@media print{
+
+    body.print-certificate *{
+        visibility:hidden;
+    }
+
+    body.print-certificate #certificate,
+    body.print-certificate #certificate *{
+        visibility:visible;
+    }
+
+    body.print-certificate #certificate{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        max-width:none;
+        margin:0;
+    }
+
+    body.print-certificate .no-print{
+        display:none!important;
+    }
+
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<div class="top-ribbon">
+    MAISON DE JU EUN ◆ THE IMPERIAL CHRONICLES ◆ MMXXVI
+</div>
+
+<!-- ======================================
+     황궁 메인 표지
+====================================== -->
+
+<header class="hero">
+
+    <div class="art hero-art"
+         data-art="palace"
+         data-local="palace.jpg"
+         data-photo="https://asset-prod.france.fr/v1_5_f03e670a39.jpg">
+    </div>
+
+    <div class="hero-shade"></div>
+    <div id="sparkles"></div>
+
+    <div class="corner tl">❦</div>
+    <div class="corner tr">❦</div>
+    <div class="corner bl">❦</div>
+    <div class="corner br">❦</div>
+
+    <div class="hero-layout">
+
+        <div class="hero-copy">
+
+            <div class="hero-crown" id="heroCrown"></div>
+
+            <div class="royal-label">
+                HER IMPERIAL MAJESTY'S PRIVATE WORLD
+            </div>
+
+            <h1>Ju Eun <span>Bang</span></h1>
+
+            <div class="korean-name">방주은</div>
+
+            <div class="hero-subtitle english">
+                The Empress's Secret Garden
+            </div>
+
+            <div class="ornament">◇</div>
+
+            <p>
+                지성은 나의 왕관이 되고,
+                다정함은 나의 품격이 되며,
+                꿈은 나의 미래를 밝히는 별이 됩니다.
+            </p>
+
+            <br>
+
+            <p>
+                새로운 배움을 사랑하고,
+                사람들과 이야기를 나누는 시간을 소중히 여기며,
+                일상 속 아름다움과 낭만을 발견하는 사람.
+                <br>
+                미래의 간호사를 꿈꾸는
+                방주은의 아름다운 황궁에 여러분을 초대합니다.
+            </p>
+
+            <div class="hero-note">
+                INSPIRED BY THE REMARRIED EMPRESS
+                <br>
+                화제의 드라마 《재혼황후》의 우아한 황실 분위기에서
+                영감을 받아 제작한 로맨스 판타지 게임형 자기소개입니다.
+            </div>
+
+            <div class="hero-buttons">
+
+                <button class="gold-button"
+                        onclick="openInvitation()">
+                    ♔ ENTER THE PALACE
+                </button>
+
+                <a href="#profile" class="wine-button">
+                    자기소개 바로 보기
+                </a>
+
+            </div>
+
+        </div>
+
+        <aside class="invitation">
+
+            <div class="eyebrow">
+                BY HER IMPERIAL MAJESTY
+            </div>
+
+            <h2>A Royal<br>Invitation</h2>
+
+            <div class="english"
+                 style="font-size:24px;font-style:italic;">
+                You Are Cordially Invited
+            </div>
+
+            <div class="art"
+                 data-art="palace"
+                 data-local="palace.jpg"
+                 data-photo="https://asset-prod.france.fr/v1_5_f03e670a39.jpg">
+            </div>
+
+            <p>
+                친애하는 황실 귀빈께.
+                <br><br>
+                황후의 왕관에서 사라진 세 가지 보석과
+                비밀 정원에 잠들어 있는 네 송이의 장미를
+                찾아주세요.
+                <br><br>
+                그 여정의 끝에서
+                황후의 진정한 꿈을 만나게 될 것입니다.
+            </p>
+
+            <button class="wax"
+                    onclick="openInvitation()"
+                    aria-label="황실 초대장 열기">
+                JE
+            </button>
+
+            <p style="font-size:11px;">
+                밀랍 봉인을 눌러 황실 초대장 열기
+            </p>
+
+        </aside>
+
+    </div>
+
+</header>
+
+<nav>
+
+    <div class="nav-links">
+
+        <a href="#passport">Passport</a>
+        <a href="#profile">Profile</a>
+        <a href="#about">About Me</a>
+        <a href="#interests">Interests</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#style">Style</a>
+        <a href="#ideal">Ideal Type</a>
+        <a href="#garden">Secret Garden</a>
+        <a href="#goal">My Goal</a>
+
+    </div>
+
+    <div class="nav-status">
+
+        <span>황실 인장</span>
+
+        <div class="progress-track">
+
+            <div class="progress-fill"
+                 id="navProgress"></div>
+
+        </div>
+
+        <span id="navCount">0 / 9</span>
+
+        <a href="#passport">여권 보기</a>
+
+    </div>
+
+</nav>
+
+<!-- ======================================
+     재혼황후 디자인 영감
+====================================== -->
+
+<section class="concept" id="concept">
+
+    <div class="art"
+         data-art="dress"
+         data-local="empress.jpg">
+    </div>
+
+    <div class="concept-body">
+
+        <div class="eyebrow">
+            THE INSPIRATION BEHIND MY PALACE
+        </div>
+
+        <h2>
+            Inspired by<br>
+            The Remarried Empress
+        </h2>
+
+        <div class="ornament">❦</div>
+
+        <p>
+            이 웹페이지는 화제의 드라마 《재혼황후》에서
+            영감을 받아 제작하였습니다.
+            작품 속 화려한 황궁과 고전적인 아름다움,
+            우아하면서도 당당한 황후의 분위기를
+            제가 좋아하는 여성스럽고 로맨틱한 스타일과
+            결합하였습니다.
+        </p>
+
+        <p>
+            특히 황실 초대장, 밀랍 봉인 서신, 왕관과 보석,
+            아름다운 드레스, 장미 정원 등의 요소를 활용하여
+            저만의 개성과 취향을 표현했습니다.
+        </p>
+
+        <p>
+            단순한 자기소개가 아니라 방문자가 직접
+            황실 귀빈이 되어 미션을 수행하고,
+            그 과정에서 저라는 사람의 성격과 가치관,
+            관심사와 미래의 꿈을 알아가도록 구성했습니다.
+        </p>
+
+        <p class="english"
+           style="font-size:27px;font-style:italic;color:#92703b;">
+
+            Every palace has a story.<br>
+            This one is mine.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+     황실 여권
+====================================== -->
+
+<section class="passport" id="passport">
+
+    <div class="passport-inner">
+
+        <div class="passport-cover">
+
+            <div style="font-size:45px;">♔</div>
+
+            <div class="royal-label">
+                THE IMPERIAL PASSPORT
+            </div>
+
+            <h2>Royal Passport</h2>
+
+            <p>
+                황실의 아홉 개 공간을 탐험하고
+                모든 인장을 수집해 주세요.
+            </p>
+
+            <div class="visitor-card">
+
+                <div class="visitor-emblem">♔</div>
+
+                <div>
+
+                    <div class="royal-label">ROYAL GUEST</div>
+
+                    <div id="visitorDisplay">
+                        이름 없는 황실 귀빈
+                    </div>
+
+                    <div id="visitorRank">
+                        황궁의 초대객
+                    </div>
+
+                    <div id="passportCount">
+                        황실 인장 0 / 9
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="gold-button"
+                    onclick="openInvitation()">
+                황실 귀빈 정보 등록
+            </button>
+
+        </div>
+
+        <div class="passport-grid"
+             id="passportGrid"></div>
+
+        <div class="passport-footer">
+
+            <span id="questHint">
+                첫 번째 공간을 탐험해 보세요.
+            </span>
+
+            <button class="wine-button"
+                    onclick="resetQuest()">
+                탐험 기록 초기화
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<main>
+
+    <div class="intro">
+
+        <div class="eyebrow">
+            THE NINE CHAMBERS OF MY LIFE
+        </div>
+
+        <h2>The Imperial Chronicles</h2>
+
+        <p>
+            저라는 사람을 이루는 아홉 가지 이야기를
+            황궁의 아름다운 공간에 담았습니다.
+            <br>
+            각각의 공간에서 황후의 새로운 모습을 발견해 보세요.
+        </p>
+
+        <div class="ornament">♔</div>
+
+    </div>
+
+    <div class="spread">
+
+        <!-- =================================
+             CHAPTER I. PROFILE
+        ================================= -->
+
+        <section class="panel" id="profile">
+
+            <div class="chapter">
+                CHAPTER I · IMPERIAL RECORDS
+            </div>
+
+            <h2>Profile</h2>
+
+            <div class="korean-title">
+                황실 기록실에 남겨진 나의 초상
+            </div>
+
+            <div class="ornament">❦</div>
+
+            <div class="crest">
+
+                <div style="font-size:38px;color:#94743c;">
+                    ♔
+                </div>
+
+                <div class="english">JE</div>
+
+                <svg viewBox="0 0 60 48" width="45">
+
+                    <g fill="none"
+                       stroke="#94743c"
+                       stroke-width="1.5">
+
+                        <ellipse cx="23" cy="14" rx="5" ry="13"
+                                 transform="rotate(-15 23 14)"/>
+
+                        <ellipse cx="37" cy="14" rx="5" ry="13"
+                                 transform="rotate(15 37 14)"/>
+
+                        <ellipse cx="30" cy="33" rx="15" ry="12"/>
+
+                        <circle cx="25" cy="31" r="1"/>
+                        <circle cx="35" cy="31" r="1"/>
+
+                        <path d="M27 35L30 38L33 35M30 38V40"/>
+
+                    </g>
+
+                </svg>
+
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Name</span>
+                <span>방주은 · Ju Eun Bang</span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">University</span>
+                <span>단국대학교</span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Major</span>
+                <span>간호학과</span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Year</span>
+                <span>2학년</span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Personality</span>
+                <span>
+                    새로운 배움을 좋아하고
+                    사람들과 수다 떠는 것을 즐기는 사람
+                </span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Interests</span>
+                <span>
+                    OTT 드라마, 인간관계, 다양한 이야기
+                </span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Hobbies</span>
+                <span>
+                    음악 감상, 여행, 발레, 티타임
+                </span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Fashion</span>
+                <span>
+                    여성스럽고 로맨틱한 에겐녀 스타일
+                </span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Strengths</span>
+                <span>
+                    책임감, 공감 능력, 협업 능력
+                </span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Values</span>
+                <span>
+                    배움, 성실함, 다정함, 신뢰
+                </span>
+            </div>
+
+            <div class="profile-row">
+                <span class="profile-label">Ambition</span>
+                <span>
+                    디지털 역량과 따뜻한 마음을 갖춘
+                    신뢰받는 간호사
+                </span>
+            </div>
+
+            <div class="quote">
+                Grace in my heart,<br>
+                wisdom in my mind.
+            </div>
+
+            <div class="wax">JE</div>
+
+            <div class="stamp-zone" data-room="0"></div>
+
+        </section>
+
+        <!-- =================================
+             CHAPTER II. ABOUT ME
+        ================================= -->
+
+        <section class="panel" id="about">
+
+            <div class="chapter">
+                CHAPTER II · THE EMPRESS'S DIARY
+            </div>
+
+            <h2>About Me</h2>
+
+            <div class="korean-title">
+                황후의 일기장, 나라는 사람의 이야기
+            </div>
+
+            <div class="ornament">❦</div>
+
+            <p>
+                안녕하세요. 저는 단국대학교 간호학과
+                2학년에 재학 중인 방주은입니다.
+                새로운 것을 알아가는 과정에서 즐거움을 느끼며,
+                사람들과 다양한 이야기를 나누는 것을 좋아합니다.
+            </p>
+
+            <p>
+                저를 한마디로 표현한다면
+                배움과 소통을 좋아하면서도
+                저만의 취향과 낭만을 소중히 여기는 사람입니다.
+                해야 할 일에는 책임감을 가지고 임하고,
+                사람을 대할 때에는 따뜻한 마음을
+                잃지 않으려고 노력합니다.
+            </p>
+
+            <div class="photo-frame">
+
+                <div class="art"
+                     data-art="letter"
+                     data-photo="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85">
+                </div>
+
+                <div class="photo-caption">
+                    The Pages of My Life
+                </div>
+
+            </div>
+
+            <div class="eyebrow">
+                OPEN THE EMPRESS'S PRIVATE DIARY
+            </div>
+
+            <p>
+                일기장의 네 가지 페이지를 펼쳐
+                저의 다양한 모습을 알아보세요.
+            </p>
+
+            <div class="diary-tabs">
+
+                <button class="diary-tab"
+                        data-page="0"
+                        onclick="openDiary(0)">
+                    성격
+                </button>
+
+                <button class="diary-tab"
+                        data-page="1"
+                        onclick="openDiary(1)">
+                    대학 생활
+                </button>
+
+                <button class="diary-tab"
+                        data-page="2"
+                        onclick="openDiary(2)">
+                    인간관계
+                </button>
+
+                <button class="diary-tab"
+                        data-page="3"
+                        onclick="openDiary(3)">
+                    나의 가치관
+                </button>
+
+            </div>
+
+            <div class="diary-page" id="diaryPage"></div>
+
+            <p id="diaryCount"
+               style="font-size:12px;color:#94743c;">
+            </p>
+
+            <div class="quote">
+                A gentle heart,<br>
+                an elegant soul,<br>
+                and a curious mind.
+            </div>
+
+            <div class="stamp-zone" data-room="1"></div>
+
+        </section>
+
+        <!-- =================================
+             CHAPTER III. INTERESTS
+        ================================= -->
+
+        <section class="panel wide" id="interests">
+
+            <div class="chapter">
+                CHAPTER III · THE ROYAL LIBRARY
+            </div>
+
+            <h2>Interests</h2>
+
+            <div class="korean-title">
+                이야기가 살아 숨 쉬는 황실 서재
+            </div>
+
+            <div class="ornament">❦</div>
+
+            <div class="two-column">
+
+                <div class="photo-frame">
+
+                    <div class="art"
+                         data-art="library"
+                         data-photo="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1000&q=85">
+                    </div>
+
+                    <div class="photo-caption">
+                        Stories Beyond the Ordinary
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <h3 class="style-title">
+                        A World Full of Stories
+                    </h3>
+
+                    <p>
+                        저의 대표적인 관심 분야는 OTT 플랫폼을 통해
+                        다양한 드라마를 감상하는 것입니다.
+                        인물들의 감정과 관계, 갈등과 선택을 따라가면서
+                        하나의 이야기에 몰입하는 시간을 좋아합니다.
+                    </p>
+
+                    <p>
+                        드라마는 바쁜 일상에서 잠시 벗어나
+                        새로운 세계를 경험할 수 있게 해줍니다.
+                        등장인물의 입장에서 생각해 보기도 하고,
+                        저와 다른 가치관이나 삶의 방식을
+                        이해하는 계기가 되기도 합니다.
+                    </p>
+
+                    <p>
+                        특히 이번 웹페이지에 영감을 준
+                        《재혼황후》의 화려한 의상과 아름다운 공간,
+                        황실 특유의 고전적인 분위기를
+                        저의 취향과 연결해 표현해 보았습니다.
+                    </p>
+
+                    <p>
+                        또한 간호학을 배우는 학생으로서
+                        디지털 기술이 의료와 간호에 어떻게
+                        활용될 수 있는지에도 관심을 가지고 있습니다.
+                        새로운 기술을 이해하고 이를 사람에게 도움이
+                        되는 방향으로 활용하는 역량을 키우고 싶습니다.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="quote">
+                Every story opens another world.<br>
+                Every lesson opens another possibility.
+            </div>
+
+            <div class="stamp-zone" data-room="2"></div>
+
+        </section>
+
+        <!-- =================================
+             CHAPTER IV. STRENGTHS
+        ================================= -->
+
+        <section class="panel wide treasury"
+                 id="strengths">
+
+            <div class="chapter">
+                CHAPTER IV · THE IMPERIAL TREASURY
+            </div>
+
+            <h2>The Lost Crown</h2>
+
+            <div class="korean-title">
+                Strengths · 황후의 잃어버린 왕관
+            </div>
+
+            <div class="ornament">♔</div>
+
+            <p>
+                황후의 진정한 왕관은 화려한 외모가 아니라
+                내면의 세 가지 강점으로 완성됩니다.
+                <br>
+                책임감의 루비, 공감의 에메랄드,
+                협업의 사파이어를 왕관에 장착해 주세요.
+            </p>
+
+            <div class="two-column">
+
+                <div class="crown-display">
+
+                    <div class="art"
+                         data-art="crown"
+                         data-local="crown.jpg"
+                         data-photo="https://live.staticflickr.com/65535/53482046910_296a35c1dc_c.jpg">
+                    </div>
+
+                    <div class="photo-caption">
+                        The Imperial Treasure
+                    </div>
+
+                </div>
+
+                <div class="crown-workshop">
+
+                    <div class="royal-label">
+                        RESTORE THE LOST CROWN
+                    </div>
+
+                    <h3>Royal Restoration</h3>
+
+                    <div id="restorationCrown"></div>
+
+                    <p id="gemCount">보석 복원 0 / 3</p>
+
+                    <div class="progress-track">
+
+                        <div class="progress-fill"
+                             id="gemProgress"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="gem-grid">
+
+                <article class="gem-card">
+
+                    <div class="gem-shape ruby">
+                        <span></span>
+                    </div>
+
+                    <h3>Ruby</h3>
+
+                    <strong>Responsibility · 책임감</strong>
+
+                    <p>
+                        맡은 일은 끝까지 수행하고
+                        주어진 역할에 최선을 다하려 노력합니다.
+                        해야 할 일을 미루거나 다른 사람에게
+                        책임을 돌리기보다 스스로 맡은 역할을
+                        충실하게 해내는 태도를 중요하게 생각합니다.
+                    </p>
+
+                    <p>
+                        간호사는 환자의 생명과 안전에 직접적으로
+                        영향을 미치는 직업이므로,
+                        이러한 책임감은 미래의 간호사로서도
+                        반드시 지켜야 할 중요한 가치라고 생각합니다.
+                    </p>
+
+                    <button class="gold-button gem-button"
+                            data-gem="0"
+                            onclick="collectGem(0)">
+                        루비 장착하기
+                    </button>
+
+                </article>
+
+                <article class="gem-card">
+
+                    <div class="gem-shape emerald">
+                        <span></span>
+                    </div>
+
+                    <h3>Emerald</h3>
+
+                    <strong>Empathy · 공감 능력</strong>
+
+                    <p>
+                        사람들과 대화하면서 상대방이 어떤 생각을
+                        하고 있는지, 어떤 감정을 느끼는지
+                        이해하려고 노력합니다.
+                        누군가의 고민을 들을 때에는
+                        그 사람의 입장에서 생각해 보고자 합니다.
+                    </p>
+
+                    <p>
+                        환자에게 필요한 것은 정확한 간호뿐 아니라
+                        자신의 불안과 어려움을 이해받고 있다는
+                        느낌이라고 생각합니다.
+                        환자의 마음까지 헤아릴 수 있는
+                        간호사가 되고 싶습니다.
+                    </p>
+
+                    <button class="gold-button gem-button"
+                            data-gem="1"
+                            onclick="collectGem(1)">
+                        에메랄드 장착하기
+                    </button>
+
+                </article>
+
+                <article class="gem-card">
+
+                    <div class="gem-shape sapphire">
+                        <span></span>
+                    </div>
+
+                    <h3>Sapphire</h3>
+
+                    <strong>Teamwork · 협업 능력</strong>
+
+                    <p>
+                        사람들과 함께 의견을 나누고
+                        공동의 목표를 이루는 과정을 좋아합니다.
+                        서로 다른 생각을 존중하면서
+                        각자의 장점을 발휘하고 부족한 부분은
+                        함께 보완하는 것이 중요하다고 생각합니다.
+                    </p>
+
+                    <p>
+                        간호 현장은 여러 의료진의 협력이 필요한
+                        공간입니다. 저의 협업 능력을 바탕으로
+                        동료와 원활하게 소통하며
+                        환자에게 안전하고 질 높은 간호를
+                        제공하고 싶습니다.
+                    </p>
+
+                    <button class="gold-button gem-button"
+                            data-gem="2"
+                            onclick="collectGem(2)">
+                        사파이어 장착하기
+                    </button>
+
+                </article>
+
+            </div>
+
+            <div class="success" id="crownComplete" hidden>
+
+                ♔ THE CROWN HAS BEEN RESTORED
+                <br>
+                황후의 세 가지 강점을 모두 발견했습니다.
+
+            </div>
+
+            <div class="stamp-zone" data-room="3"></div>
+
+        </section>
+
+        <!-- =================================
+             CHAPTER V. HOBBIES
+        ================================= -->
+
+        <section class="panel wide" id="hobbies">
+
+            <div class="chapter">
+                CHAPTER V · THE PRIVATE ROYAL SALON
+            </div>
+
+            <h2>Hobbies</h2>
+
+            <div class="korean-title">
+                황후의 오후, 일상 속 여유와 낭만
+            </div>
+
+            <div class="ornament">❦</div>
+
+            <p>
+                바쁜 대학 생활 속에서도 제가 좋아하는 것들을
+                즐기며 일상의 균형을 찾고 싶습니다.
+                음악, 여행, 발레, 티타임은 각기 다른 방식으로
+                저의 감성을 풍부하게 만들어 주는 소중한 취미입니다.
+            </p>
+
+            <div class="hobby-grid">
+
+                <article class="hobby">
+
+                    <div class="art"
+                         data-art="music"
+                         data-photo="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=750&q=85">
+                    </div>
+
+                    <div class="hobby-body">
+
+                        <div class="eyebrow">I</div>
+                        <h3>Music</h3>
+                        <strong>음악 감상</strong>
+
+                        <p>
+                            음악을 들으며 그날의 감정을 정리하고
+                            마음의 여유를 찾는 것을 좋아합니다.
+                            기분과 상황에 따라 음악을 들으며
+                            평범한 하루에도 특별한 분위기를 더합니다.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="hobby">
+
+                    <div class="art"
+                         data-art="palace"
+                         data-photo="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=750&q=85">
+                    </div>
+
+                    <div class="hobby-body">
+
+                        <div class="eyebrow">II</div>
+                        <h3>Travel</h3>
+                        <strong>여행</strong>
+
+                        <p>
+                            새로운 장소에서 아름다운 풍경과 문화를
+                            경험하는 순간을 좋아합니다.
+                            일상에서 벗어나 새로운 환경을 만나면서
+                            다양한 시각과 소중한 추억을 얻고 싶습니다.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="hobby">
+
+                    <div class="art"
+                         data-art="ballet"
+                         data-photo="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=750&q=85">
+                    </div>
+
+                    <div class="hobby-body">
+
+                        <div class="eyebrow">III</div>
+                        <h3>Ballet</h3>
+                        <strong>발레</strong>
+
+                        <p>
+                            섬세한 움직임과 우아한 선이 아름다운
+                            발레를 좋아합니다.
+                            부드러운 아름다움 속에 집중력과
+                            단단한 힘이 담겨 있다는 점에
+                            매력을 느낍니다.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="hobby">
+
+                    <div class="art"
+                         data-art="tea"
+                         data-photo="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=750&q=85">
+                    </div>
+
+                    <div class="hobby-body">
+
+                        <div class="eyebrow">IV</div>
+                        <h3>Tea Time</h3>
+                        <strong>티타임</strong>
+
+                        <p>
+                            향기로운 차 한 잔을 마시며 여유롭게
+                            시간을 보내는 것을 좋아합니다.
+                            아름다운 분위기 속에서 이야기를 나누거나
+                            혼자만의 시간을 즐기는 것도
+                            일상 속 작은 행복입니다.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="tea-banner">
+
+                <div class="art"
+                     data-art="tea"
+                     data-photo="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1100&q=85">
+                </div>
+
+                <div class="tea-body">
+
+                    <div class="royal-label">
+                        THE EMPRESS'S AFTERNOON TEA
+                    </div>
+
+                    <h3>Afternoon Tea<br>with Ju Eun</h3>
+
+                    <p>
+                        황실 살롱의 특별한 티타임에 초대합니다.
+                        오늘의 차와 디저트를 직접 선택해 주세요.
+                    </p>
+
+                    <div class="choice-row">
+
+                        <button class="tea-choice"
+                                data-kind="tea"
+                                data-value="얼그레이"
+                                onclick="chooseTea(this)">
+                            Earl Grey
+                        </button>
+
+                        <button class="tea-choice"
+                                data-kind="tea"
+                                data-value="로즈 티"
+                                onclick="chooseTea(this)">
+                            Rose Tea
+                        </button>
+
+                        <button class="tea-choice"
+                                data-kind="tea"
+                                data-value="캐모마일"
+                                onclick="chooseTea(this)">
+                            Chamomile
+                        </button>
+
+                    </div>
+
+                    <div class="choice-row">
+
+                        <button class="tea-choice"
+                                data-kind="dessert"
+                                data-value="마카롱"
+                                onclick="chooseTea(this)">
+                            Macaron
+                        </button>
+
+                        <button class="tea-choice"
+                                data-kind="dessert"
+                                data-value="스콘"
+                                onclick="chooseTea(this)">
+                            Scone
+                        </button>
+
+                        <button class="tea-choice"
+                                data-kind="dessert"
+                                data-value="딸기 케이크"
+                                onclick="chooseTea(this)">
+                            Strawberry Cake
+                        </button>
+
+                    </div>
+
+                    <p id="teaSelection">
+                        차와 디저트를 선택해 주세요.
+                    </p>
+
+                    <button class="gold-button"
+                            onclick="openTea()">
+                        맞춤형 황실 티타임 초대장 받기
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="stamp-zone" data-room="4"></div>
+
+        </section>
+
+        <!-- =================================
+             CHAPTER VI. SIGNATURE STYLE
+        ================================= -->
+
+        <section class="panel wide" id="style">
+
+            <div class="chapter">
+                CHAPTER VI · THE IMPERIAL ATELIER
+            </div>
+
+            <h2>Signature Style</h2>
+
+            <div class="korean-title">
+                황후의 드레스룸, 나만의 아름다움
+            </div>
+
+            <div class="ornament">❦</div>
+
+            <div class="two-column">
+
+                <div class="dress-studio">
+
+                    <div id="dressPreview"></div>
+
+                    <div class="photo-caption">
+                        Design Your Imperial Gown
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <h3 class="style-title">
+                        Feminine, Romantic<br>
+                        & Timeless Elegance
+                    </h3>
+
+                    <p>
+                        저는 흔히 에겐녀 스타일이라고 표현하는
+                        부드럽고 여성스러운 분위기의 옷차림을
+                        좋아합니다. 여성스러운 실루엣과
+                        우아하고 로맨틱한 분위기를 선호합니다.
+                    </p>
+
+                    <p>
+                        사랑스러운 분위기를 좋아하지만
+                        너무 유치하거나 과하기보다는
+                        단정하면서도 고급스러운 느낌을
+                        추구하고 싶습니다.
+                        로즈 핑크, 아이보리, 진주빛과
+                        앤티크 골드처럼 부드럽고 클래식한 색감은
+                        이러한 취향을 잘 표현해 줍니다.
+                    </p>
+
+                    <p>
+                        저에게 패션은 단순히 옷을 입는 것을 넘어
+                        자신의 개성과 감성을 보여주는 방법입니다.
+                        여성스러운 외적인 분위기와 함께
+                        지성, 자신감, 따뜻한 내면도 갖춘
+                        사람으로 성장하고 싶습니다.
+                    </p>
+
+                    <div class="tags">
+                        <span>Feminine</span>
+                        <span>Elegant</span>
+                        <span>Romantic</span>
+                        <span>Balletcore</span>
+                        <span>Classic</span>
+                        <span>Soft Luxury</span>
+                    </div>
+
+                    <div class="ornament">◇</div>
+
+                    <div class="eyebrow">
+                        YOUR IMPERIAL DRESS DESIGN
+                    </div>
+
+                    <p>
+                        황실 무도회에 어울리는 드레스 색상을
+                        직접 선택해 보세요.
+                        왼쪽 드레스의 색이 실시간으로 바뀝니다.
+                    </p>
+
+                    <div class="palette">
+
+                        <button class="colour-choice"
+                                style="background:#e9dcc4"
+                                data-colour="0"
+                                aria-label="로열 아이보리"
+                                onclick="chooseDress(0)">
+                        </button>
+
+                        <button class="colour-choice"
+                                style="background:#d8a6b8"
+                                data-colour="1"
+                                aria-label="로즈 펄"
+                                onclick="chooseDress(1)">
+                        </button>
+
+                        <button class="colour-choice"
+                                style="background:#a982a9"
+                                data-colour="2"
+                                aria-label="로열 라벤더"
+                                onclick="chooseDress(2)">
+                        </button>
+
+                        <button class="colour-choice"
+                                style="background:#769c87"
+                                data-colour="3"
+                                aria-label="에메랄드 그린"
+                                onclick="chooseDress(3)">
+                        </button>
+
+                        <button class="colour-choice"
+                                style="background:#88425e"
+                                data-colour="4"
+                                aria-label="로열 버건디"
+                                onclick="chooseDress(4)">
+                        </button>
+
+                    </div>
+
+                    <p id="dressMessage"
+                       style="color:#94743c;">
+                        드레스 컬러를 선택해 주세요.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="style-gallery">
+
+                <div class="photo-frame">
+
+                    <div class="art"
+                         data-art="dress"
+                         data-photo="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=750&q=85">
+                    </div>
+
+                    <div class="photo-caption">
+                        Feminine Silhouette
+                    </div>
+
+                </div>
+
+                <div class="photo-frame">
+
+                    <div class="art"
+                         data-art="jewelry"
+                         data-photo="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=750&q=85">
+                    </div>
+
+                    <div class="photo-caption">
+                        Timeless Jewellery
+                    </div>
+
+                </div>
+
+                <div class="photo-frame">
+
+                    <div class="art"
+                         data-art="rose"
+                         data-photo="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=750&q=85">
+                    </div>
+
+                    <div class="photo-caption">
+                        Romantic Flowers
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stamp-zone" data-room="5"></div>
+
+        </section>
+
+        <!-- =================================
+             CHAPTER VII. IDEAL TYPE
+        ================================= -->
+
+        <section class="panel wide" id="ideal">
+
+            <div class="chapter">
+                CHAPTER VII · THE SECRET CORRESPONDENCE
+            </div>
+
+            <h2>Ideal Type</h2>
+
+            <div class="korean-title">
+                황후의 마음이 향하는 사람
+            </div>
+
+            <div class="ornament">❦</div>
+
+            <div class="letter-room">
+
+                <div class="eyebrow">
+                    PRIVATE LETTER · HER MAJESTY'S SEAL
+                </div>
+
+                <div class="letter-title">
+                    To My Dearest...
+                </div>
+
+                <p>
+                    황후가 마음속 깊이 간직해 온
+                    이상적인 인연에 대한 비밀 서신입니다.
+                    <br>
+                    밀랍 봉인을 열어 편지를 확인해 보세요.
+                </p>
+
+                <button class="envelope"
+                        id="envelope"
+                        aria-label="이상형 비밀 편지 열기"
+                        aria-expanded="false"
+                        onclick="toggleLetter()">
+
+                    <span class="envelope-flap"></span>
+                    <span class="wax">JE</span>
+
+                </button>
+
+                <button class="wine-button"
+                        id="letterButton"
+                        onclick="toggleLetter()">
+                    밀랍 봉인 열기 · Break the Seal
+                </button>
+
+                <div class="secret-letter"
+                     id="secretLetter" hidden>
+
+                    <div class="letter-title">
+                        To someone special,
+                    </div>
+
+                    <div class="ornament">❦</div>
+
+                    <div class="art"
+                         data-art="letter">
+                    </div>
+
+                    <!-- 이상형은 실제 취향에 맞게 수정 가능한 예시 -->
+
+                    <p>
+                        제가 생각하는 이상적인 인연은
+                        서로의 생각과 감정을 존중하고,
+                        각자의 꿈을 응원해 줄 수 있는
+                        사람과의 만남입니다.
+                    </p>
+
+                    <p>
+                        저는 사람들과 이야기를 나누는 것을
+                        좋아하기 때문에 함께 있을 때 대화가
+                        자연스럽고, 사소한 일상도 즐겁게
+                        공유할 수 있는 사람에게 매력을 느낍니다.
+                    </p>
+
+                    <p>
+                        따뜻하고 다정한 마음을 가지고 있으며
+                        말뿐만 아니라 행동으로 신뢰를
+                        보여주는 사람과 함께하고 싶습니다.
+                        서로의 마음을 솔직하게 표현하고
+                        작은 약속도 소중하게 생각하는
+                        관계를 꿈꿉니다.
+                    </p>
+
+                    <p>
+                        화려하고 특별한 순간뿐 아니라
+                        함께 차를 마시고 음악을 듣거나,
+                        여행을 떠나는 평범한 일상 속에서도
+                        행복을 느낄 수 있으면 좋겠습니다.
+                    </p>
+
+                    <p>
+                        무엇보다 각자의 목표를 존중하면서
+                        서로에게 힘이 되어주고,
+                        함께 더 좋은 사람으로 성장할 수 있는
+                        관계를 소중하게 생각합니다.
+                    </p>
+
+                    <div class="quote">
+                        Not a perfect fairy tale,<br>
+                        but a love built on trust,<br>
+                        warmth and mutual respect.
+                    </div>
+
+                    <div class="signature">
+                        With affection,<br>
+                        Ju Eun
+                    </div>
+
+                    <div class="wax">JE</div>
+
+                </div>
+
+            </div>
+
+            <div class="stamp-zone" data-room="6"></div>
+
+        </section>
+
+        <!-- =================================
+             CHAPTER VIII. SECRET GARDEN
+        ================================= -->
+
+        <section class="panel wide garden" id="garden">
+
+            <div class="chapter">
+                CHAPTER VIII · THE EMPRESS'S SECRET GARDEN
+            </div>
+
+            <h2>The Secret Garden</h2>
+
+            <div class="korean-title">
+                황후의 마음속에 피어나는 네 송이의 장미
+            </div>
+
+            <div class="ornament">❦</div>
+
+            <p>
+                사람마다 마음속에 소중하게 간직하는
+                가치가 있다고 생각합니다.
+                저의 비밀 정원에는 배움과 다정함,
+                성실함과 신뢰를 상징하는 네 송이의 장미가
+                잠들어 있습니다.
+            </p>
+
+            <p>
+                각각의 장미에 담긴 이야기를 읽고
+                꽃을 피워 저만의 비밀 정원을 완성해 주세요.
+            </p>
+
+            <div class="garden-display">
+
+                <div id="gardenPreview"></div>
+
+            </div>
+
+            <div class="garden-message" id="gardenCount">
+                피어난 장미 0 / 4
+            </div>
+
+            <div class="flower-grid">
+
+                <article class="flower-card">
+
+                    <div class="flower-icon">❦</div>
+
+                    <h3>Growth</h3>
+
+                    <strong>배움의 장미</strong>
+
+                    <p>
+                        새로운 것을 배우고 어제보다 더 발전한
+                        사람이 되는 과정에 가치를 느낍니다.
+                        배움을 통해 더 넓은 세상을 이해하고
+                        전문성을 키우고 싶습니다.
+                    </p>
+
+                    <button class="gold-button flower-button"
+                            data-flower="0"
+                            onclick="bloomFlower(0)">
+                        장미 피우기
+                    </button>
+
+                </article>
+
+                <article class="flower-card">
+
+                    <div class="flower-icon">❦</div>
+
+                    <h3>Kindness</h3>
+
+                    <strong>다정함의 장미</strong>
+
+                    <p>
+                        사람에게 따뜻한 말 한마디를 건네고,
+                        상대방의 이야기에 귀 기울이는 태도를
+                        소중히 생각합니다.
+                        누군가에게 편안함을 주는 사람이
+                        되고 싶습니다.
+                    </p>
+
+                    <button class="gold-button flower-button"
+                            data-flower="1"
+                            onclick="bloomFlower(1)">
+                        장미 피우기
+                    </button>
+
+                </article>
+
+                <article class="flower-card">
+
+                    <div class="flower-icon">❦</div>
+
+                    <h3>Sincerity</h3>
+
+                    <strong>성실함의 장미</strong>
+
+                    <p>
+                        작은 일이라도 소홀하게 생각하지 않고
+                        자신의 역할에 최선을 다하는 태도는
+                        꾸준한 성장의 바탕이 된다고 생각합니다.
+                        성실함을 잃지 않고 싶습니다.
+                    </p>
+
+                    <button class="gold-button flower-button"
+                            data-flower="2"
+                            onclick="bloomFlower(2)">
+                        장미 피우기
+                    </button>
+
+                </article>
+
+                <article class="flower-card">
+
+                    <div class="flower-icon">❦</div>
+
+                    <h3>Trust</h3>
+
+                    <strong>신뢰의 장미</strong>
+
+                    <p>
+                        사람과 사람 사이에서 가장 중요한
+                        가치 중 하나는 신뢰라고 생각합니다.
+                        진심과 책임감 있는 행동을 통해
+                        믿을 수 있는 사람이 되고 싶습니다.
+                    </p>
+
+                    <button class="gold-button flower-button"
+                            data-flower="3"
+                            onclick="bloomFlower(3)">
+                        장미 피우기
+                    </button>
+
+                </article>
+
+            </div>
+
+            <div class="success" id="gardenComplete" hidden>
+
+                THE SECRET GARDEN IS IN BLOOM
+                <br>
+                네 송이의 장미가 모두 피어났습니다.
+                <br>
+                황후의 비밀 정원 인장이 해제되었습니다.
+
+            </div>
+
+            <div class="stamp-zone" data-room="7"></div>
+
+        </section>
+
+        <!-- =================================
+             CHAPTER IX. MY GOAL
+        ================================= -->
+
+        <section class="panel wide declaration" id="goal">
+
+            <div class="chapter">
+                CHAPTER IX · THE IMPERIAL DECLARATION
+            </div>
+
+            <h2>My Goal</h2>
+
+            <div class="korean-title">
+                미래의 왕좌, 나의 꿈을 향한 선언
+            </div>
+
+            <div class="ornament">♔</div>
+
+            <div class="art"
+                 data-art="throne"
+                 style="height:350px;border:1px solid var(--gold);">
+            </div>
+
+            <p>
+                저는 앞으로 디지털 기술을 잘 활용하면서도
+                환자의 마음을 이해하고 신뢰받을 수 있는
+                간호사가 되고 싶습니다.
+            </p>
+
+            <p>
+                간호학을 공부하며 환자의 건강과 회복을 위해서는
+                전문적인 지식과 정확한 판단뿐 아니라
+                환자와의 소통, 공감 능력,
+                의료진 간의 협력이 중요하다는 것을
+                알아가고 있습니다.
+            </p>
+
+            <p>
+                현대 의료 환경은 인공지능, 전자의무기록,
+                디지털 헬스케어 등 새로운 기술의 발전으로
+                빠르게 변화하고 있습니다.
+                이러한 변화에 능동적으로 대응할 수 있도록
+                디지털 역량을 키우고 새로운 기술을
+                안전하고 효과적으로 활용하고 싶습니다.
+            </p>
+
+            <p>
+                동시에 아무리 기술이 발전하더라도
+                환자가 느끼는 불안과 두려움을 이해하고
+                따뜻하게 소통하는 간호의 본질을
+                잊지 않는 사람이 되고 싶습니다.
+            </p>
+
+            <div class="goal-grid">
+
+                <div class="goal-card">
+
+                    <div class="goal-icon">♔</div>
+
+                    <h3>Knowledge</h3>
+                    <strong>전문성과 꾸준한 배움</strong>
+
+                    <p>
+                        간호학적 지식과 실무 능력을 지속적으로
+                        발전시키고 근거에 기반한 정확하고
+                        안전한 간호를 제공하겠습니다.
+                    </p>
+
+                </div>
+
+                <div class="goal-card">
+
+                    <div class="goal-icon">◇</div>
+
+                    <h3>Innovation</h3>
+                    <strong>디지털 역량과 발전</strong>
+
+                    <p>
+                        변화하는 의료 환경에 관심을 가지고
+                        새로운 기술을 적극적으로 배우며
+                        환자에게 도움이 되는 방향으로
+                        활용하겠습니다.
+                    </p>
+
+                </div>
+
+                <div class="goal-card">
+
+                    <div class="goal-icon">❦</div>
+
+                    <h3>Compassion</h3>
+                    <strong>공감과 인간적인 간호</strong>
+
+                    <p>
+                        환자의 신체적 어려움과 정서적 불안을
+                        함께 이해하며 따뜻한 소통을 통해
+                        신뢰를 주는 간호사가 되겠습니다.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p>
+                대학 생활 동안 전공 지식을 충실하게 쌓고,
+                책임감과 공감 능력, 협업 능력을 발전시키며
+                미래의 간호사로서 필요한 역량을
+                꾸준히 준비하겠습니다.
+            </p>
+
+            <p>
+                환자에게는 믿음과 안심을 주고,
+                동료에게는 함께 일하고 싶은 신뢰를 주며,
+                저 자신에게는 성장의 기쁨을 주는
+                간호사가 되는 것이 저의 목표입니다.
+            </p>
+
+            <div class="ornament">◇</div>
+
+            <div class="english"
+                 style="font-size:36px;font-style:italic;color:#f1dcac;line-height:1.5;">
+
+                Her strength is knowledge.<br>
+                Her beauty is grace.<br>
+                Her legacy is compassion.
+
+            </div>
+
+            <div class="quiz">
+
+                <div class="eyebrow"
+                     style="text-align:center;">
+                    THE EMPRESS'S FINAL TRIAL
+                </div>
+
+                <h3>황실의 마지막 시험</h3>
+
+                <div class="ornament">◇</div>
+
+                <div id="quizQuestion"></div>
+                <div id="quizOptions"></div>
+
+                <p id="quizMessage"
+                   aria-live="polite"></p>
+
+                <button class="wine-button"
+                        id="nextQuestion"
+                        onclick="advanceQuiz()" hidden>
+                    다음 문제
+                </button>
+
+            </div>
+
+            <div class="stamp-zone" data-room="8"></div>
+
+        </section>
+
+    </div>
+
+</main>
+
+<!-- ======================================
+     특별 엔딩
+====================================== -->
+
+<section class="ending" id="ending">
+
+    <div id="lockedEnding">
+
+        <div style="font-size:50px;">♔</div>
+
+        <div class="royal-label">
+            THE SECRET ENDING
+        </div>
+
+        <h2>The Grand Imperial Ceremony</h2>
+
+        <p>
+            아홉 가지 황실 인장을 모두 모으면
+            황후의 특별한 마지막 편지와
+            황실 명예 방문객 증서가 공개됩니다.
+        </p>
+
+        <p id="remainingCount">남은 인장 9개</p>
+
+        <a href="#passport" class="gold-button">
+            황실 여권 확인하기
+        </a>
+
+    </div>
+
+    <div id="unlockedEnding" hidden>
+
+        <div class="royal-label">
+            THE GRAND CORONATION
+        </div>
+
+        <h2>Quest Completed</h2>
+
+        <div id="endingCrown"
+             style="max-width:230px;margin:20px auto;">
+        </div>
+
+        <p>
+            황후의 왕관은 아름답게 복원되었고,
+            비밀 정원의 장미도 모두 피어났습니다.
+        </p>
+
+        <p id="endingGreeting"></p>
+
+        <p>
+            저의 성격과 취향, 소중한 가치와
+            미래의 꿈을 함께 발견해 주셔서 감사합니다.
+            <br>
+            귀하를 황실의 명예 방문객으로 임명합니다.
+        </p>
+
+        <button class="gold-button"
+                onclick="issueCertificate()">
+            나만의 황실 명예 증서 발급
+        </button>
+
+        <div class="certificate"
+             id="certificate" hidden>
+
+            <div class="eyebrow">
+                MAISON DE JU EUN · MMXXVI
+            </div>
+
+            <div id="certificateCrown"
+                 style="max-width:160px;margin:20px auto;">
+            </div>
+
+            <h3>Certificate of Honour</h3>
+
+            <p>황실 명예 방문객 임명장</p>
+
+            <div class="ornament">❦</div>
+
+            <div class="certificate-name"
+                 id="certificateName">
+            </div>
+
+            <p>
+                위 방문객은 황궁의 아홉 개 공간을 탐험하고,
+                황후의 왕관을 복원하였으며,
+                비밀 정원의 네 송이 장미를 피우고
+                모든 황실 미션을 성공적으로 완수하였습니다.
+            </p>
+
+            <p>
+                이에 Maison de Ju Eun의
+                황실 명예 방문객 칭호를 수여합니다.
+            </p>
+
+            <div class="signature"
+                 style="text-align:center;">
+                With grace and gratitude,<br>
+                Ju Eun Bang
+            </div>
+
+            <div class="wax">JE</div>
+
+            <button class="wine-button no-print"
+                    onclick="printCertificate()">
+                증서 인쇄 / PDF 저장
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+     황실 귀빈 등록 팝업
+====================================== -->
+
+<dialog id="invitationDialog">
+
+    <div class="eyebrow">
+        BY HER IMPERIAL MAJESTY
+    </div>
+
+    <div style="font-size:45px;color:#b89b60;">♔</div>
+
+    <h2>Your Royal Invitation</h2>
+
+    <div class="art" data-art="palace"></div>
+
+    <p>
+        친애하는 방문객께.
+        <br>
+        황궁에 입장하기 전 귀하의 이름을 등록해 주세요.
+        이름은 황실 여권과 최종 명예 증서에 기록됩니다.
+    </p>
+
+    <form id="guestForm">
+
+        <input class="royal-input"
+               id="guestInput"
+               type="text"
+               maxlength="30"
+               placeholder="황실 귀빈 이름"
+               aria-label="방문객 이름"
+               required>
+
+        <button class="wax"
+                type="submit"
+                aria-label="황실 초대 수락">
+            JE
+        </button>
+
+        <p style="font-size:12px;">
+            밀랍 봉인을 눌러 초대 수락
+        </p>
+
+    </form>
+
+    <button class="wine-button"
+            onclick="document.getElementById('invitationDialog').close()">
+        초대장 닫기
+    </button>
+
+</dialog>
+
+<!-- 티타임 팝업 -->
+
+<dialog id="teaDialog">
+
+    <div class="eyebrow">
+        THE PRIVATE ROYAL SALON
+    </div>
+
+    <h2>Afternoon Tea Invitation</h2>
+
+    <div class="art" data-art="tea"></div>
+
+    <div class="ornament">❦</div>
+
+    <p id="teaGuest"></p>
+
+    <p>
+        오늘의 황실 티타임 메뉴
+        <br>
+        <strong id="invitedTea"></strong>
+        <br>
+        <strong id="invitedDessert"></strong>
+    </p>
+
+    <p>
+        향기로운 차와 달콤한 디저트,
+        아름다운 음악과 따뜻한 대화가 함께하는
+        우아한 오후를 보내세요.
+    </p>
+
+    <div class="signature">
+        Yours sincerely,<br>Ju Eun
+    </div>
+
+    <form method="dialog">
+
+        <button class="gold-button">
+            황실 초대장 간직하기
+        </button>
+
+    </form>
+
+</dialog>
+
+<div id="toast"
+     role="status"
+     aria-live="polite"></div>
+
+<footer>
+
+    <div class="royal-label">
+        THE FINAL PAGE OF THE IMPERIAL CHRONICLES
+    </div>
+
+    <div style="font-size:45px;">♔</div>
+
+    <h2>Until We Meet Again.</h2>
+
+    <p>
+        저의 아름다운 황궁에 방문해 주셔서 감사합니다.
+    </p>
+
+    <p>
+        당신의 일상에도 아름다운 순간과
+        따뜻한 마음, 새로운 꿈이 가득하기를 바랍니다.
+    </p>
+
+    <div class="english"
+         style="font-size:36px;font-style:italic;">
+        Yours sincerely, Ju Eun
+    </div>
+
+    <a href="#top"
+       class="gold-button"
+       style="margin:25px 0;">
+        RETURN TO THE PALACE
+    </a>
+
+    <p style="font-size:11px;opacity:.8;">
+
+        © 2026 Ju Eun Bang · Maison de Ju Eun
+        <br>
+        Inspired by the drama 《재혼황후》
+        <br>
+        개인 자기소개를 위해 제작한 비공식 창작물입니다.
+        <br>
+        사진 출처: France.fr · Unsplash · Flickr
+        <br>
+        사진 연결 실패 시 자체 SVG 일러스트가 표시됩니다.
+
+    </p>
+
+</footer>
+
+<script>
+
+/* ======================================
+   자체 SVG 일러스트 엔진
+====================================== */
+
+let artId=0;
+
+function roseSVG(x,y,size,colour="#bf829e",bloom=true){
+
+    return `
+
+        <g transform="translate(${x} ${y}) scale(${size/35})">
+
+            <path d="M0 0Q-12 40 0 105"
+                  fill="none"
+                  stroke="#527456"
+                  stroke-width="5"/>
+
+            <path d="M-4 55Q-44 25 -39 60Q-19 76 -4 65"
+                  fill="#76966c"/>
+
+            <path d="M-3 77Q39 43 35 77Q15 94 -3 86"
+                  fill="#86a37a"/>
+
+            ${bloom?`
+
+                ${Array.from({length:10},(_,i)=>`
+
+                    <ellipse
+                        cx="${Math.cos(i*Math.PI/5)*15}"
+                        cy="${Math.sin(i*Math.PI/5)*15}"
+                        rx="22" ry="14"
+                        transform="rotate(${i*36})"
+                        fill="${colour}"
+                        stroke="#f0d4da"
+                        stroke-width="1"/>
+
+                `).join("")}
+
+                <circle r="16" fill="${colour}"/>
+
+                <path d="M-10 1Q0 -15 12 -3
+                         Q15 10 0 14Q-15 4 -5 -4"
+                      fill="none"
+                      stroke="#985a75"
+                      stroke-width="2"/>
+
+            `:`
+
+                <path d="M-13 0Q-25 -28 0 -40
+                         Q25 -28 13 0Z"
+                      fill="${colour}"
+                      stroke="#718b64"/>
+
+            `}
+
+        </g>
+
+    `;
+
+}
+
+function frameSVG(content,bg="#e9d6c4",view="0 0 800 540"){
+
+    const id="illustration"+(++artId);
+
+    return `
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             viewBox="${view}"
+             preserveAspectRatio="xMidYMid slice">
+
+            <defs>
+
+                <linearGradient id="${id}gold" x2="1" y2="1">
+                    <stop stop-color="#8c6532"/>
+                    <stop offset=".3" stop-color="#f8e8bd"/>
+                    <stop offset=".65" stop-color="#b58c4c"/>
+                    <stop offset="1" stop-color="#e9cd91"/>
+                </linearGradient>
+
+                <linearGradient id="${id}sky" x2="0" y2="1">
+                    <stop stop-color="#a8c1cf"/>
+                    <stop offset=".65" stop-color="#f7ded2"/>
+                    <stop offset="1" stop-color="#e9b9ad"/>
+                </linearGradient>
+
+                <linearGradient id="${id}paper" x2="1" y2="1">
+                    <stop stop-color="#fff5df"/>
+                    <stop offset="1" stop-color="#ddc4a2"/>
+                </linearGradient>
+
+            </defs>
+
+            <rect width="800" height="540" fill="${bg}"/>
+
+            ${content
+                .replaceAll("GOLD",`url(#${id}gold)`)
+                .replaceAll("SKY",`url(#${id}sky)`)
+                .replaceAll("PAPER",`url(#${id}paper)`)}
+
+        </svg>
+
+    `;
+
+}
+
+/* 황금 왕관 */
+
+function crownParts(gems){
+
+    const colours=["#b03b60","#369a74","#527ec8"];
+
+    return `
+
+        <path d="M48 194Q18 58 170 46
+                 Q322 58 292 194Z"
+              fill="#78405e"
+              stroke="#b89b60"
+              stroke-width="3"/>
+
+        <g stroke="GOLD" stroke-width="9" fill="none">
+
+            <path d="M60 190Q5 70 170 40
+                     Q335 70 280 190"/>
+
+            <path d="M120 190Q78 60 170 40
+                     Q262 60 220 190"/>
+
+        </g>
+
+        <path d="M48 195L30 106L84 132L108 78
+                 L170 135L232 78L256 132L310 106
+                 L292 195Z"
+              fill="GOLD"
+              stroke="#f1d7a0"
+              stroke-width="2"/>
+
+        <rect x="48" y="194" width="244" height="28"
+              rx="6" fill="GOLD"/>
+
+        <circle cx="170" cy="39" r="13" fill="GOLD"/>
+
+        <path d="M165 3H175V13H187V23H175V34
+                 H165V23H153V13H165Z"
+              fill="GOLD"/>
+
+        ${[30,108,232,310].map((x,i)=>`
+
+            <circle cx="${x}"
+                    cy="${i===1||i===2?72:100}"
+                    r="7"
+                    fill="#fff2d6"
+                    stroke="#b89b60"/>
+
+        `).join("")}
+
+        ${Array.from({length:14},(_,i)=>`
+
+            <circle cx="${64+i*16.3}" cy="208"
+                    r="5"
+                    fill="#fff5df"
+                    stroke="#b89b60"/>
+
+        `).join("")}
+
+        ${[101,170,239].map((x,i)=>`
+
+            <path d="M${x} 138
+                     l15 22 -15 22 -15 -22Z"
+                  fill="${gems.includes(i)?colours[i]:"#67534e"}"
+                  stroke="#fff0bd"
+                  stroke-width="2.5"/>
+
+            ${gems.includes(i)?`
+
+                <path d="M${x} 138
+                         l-5 22 5 22 5 -22Z"
+                      fill="#fff"
+                      opacity=".35"/>
+
+                <circle cx="${x-4}"
+                        cy="151"
+                        r="3"
+                        fill="#fff"
+                        opacity=".9"/>
+
+            `:""}
+
+        `).join("")}
+
+    `;
+
+}
+
+function crownSVG(gems){
+
+    return frameSVG(
+        crownParts(gems),
+        "transparent",
+        "0 0 340 240"
+    );
+
+}
+
+/* 황궁과 정원 */
+
+function palaceSVG(){
+
+    let windows="";
+
+    [70,535].forEach(start=>{
+
+        for(let row=0;row<2;row++){
+
+            for(let i=0;i<6;i++){
+
+                const x=start+i*32;
+                const y=225+row*58;
+
+                windows+=`
+
+                    <path d="M${x} ${y+38}v-26
+                             q12 -18 24 0v26Z"
+                          fill="#677b82"
+                          stroke="#b89b60"
+                          stroke-width="2"/>
+
+                    <path d="M${x+12} ${y+2}v36
+                             M${x} ${y+21}h24"
+                          stroke="#e5c99a"/>
+
+                `;
+
+            }
+
+        }
+
+    });
+
+    return frameSVG(`
+
+        <rect width="800" height="540" fill="SKY"/>
+
+        <circle cx="665" cy="90" r="57"
+                fill="#fff0c5" opacity=".9"/>
+
+        <g fill="#fff3e6" opacity=".65">
+            <ellipse cx="110" cy="65" rx="100" ry="20"/>
+            <ellipse cx="350" cy="80" rx="110" ry="22"/>
+        </g>
+
+        <path d="M0 305Q170 200 330 290
+                 T800 265V540H0Z"
+              fill="#81977d"/>
+
+        <rect y="355" width="800" height="185"
+              fill="#78906e"/>
+
+        <rect x="45" y="205" width="710" height="160"
+              fill="#e8d2b1"
+              stroke="#b89b60"
+              stroke-width="2"/>
+
+        <path d="M35 205L75 165H725L765 205Z"
+              fill="#71848c"/>
+
+        <rect x="270" y="160" width="260" height="205"
+              fill="#f1dfbf"
+              stroke="#b89b60"/>
+
+        <path d="M255 160L400 85L545 160Z"
+              fill="#d6ba88"
+              stroke="#b89b60"
+              stroke-width="2"/>
+
+        <rect x="270" y="160" width="260" height="10"
+              fill="GOLD"/>
+
+        ${windows}
+
+        ${Array.from({length:6},(_,i)=>`
+
+            <rect x="${280+i*46}" y="175"
+                  width="10" height="180"
+                  fill="#fff0ce"
+                  stroke="#c2a575"/>
+
+        `).join("")}
+
+        <circle cx="400" cy="132" r="16"
+                fill="GOLD"/>
+
+        <path d="M376 355V285
+                 Q400 249 424 285V355Z"
+              fill="#755c54"
+              stroke="#b89b60"
+              stroke-width="3"/>
+
+        <rect x="45" y="355" width="710" height="12"
+              fill="#c7b28d"/>
+
+        <path d="M355 367H445L575 540H225Z"
+              fill="#e7d6b9"/>
+
+        <g fill="#4c6a4e" stroke="#aac09b">
+
+            <ellipse cx="115" cy="430" rx="110" ry="35"/>
+            <ellipse cx="685" cy="430" rx="110" ry="35"/>
+
+            <ellipse cx="125" cy="505" rx="125" ry="35"/>
+            <ellipse cx="675" cy="505" rx="125" ry="35"/>
+
+        </g>
+
+        <ellipse cx="400" cy="466" rx="119" ry="45"
+                 fill="#c0b19a"/>
+
+        <ellipse cx="400" cy="460" rx="109" ry="34"
+                 fill="#8cbfc4"/>
+
+        <ellipse cx="400" cy="460" rx="77" ry="22"
+                 stroke="#e6f1e6" stroke-width="3"
+                 fill="none"/>
+
+        <path d="M382 456H418L410 415H390Z"
+              fill="#e8d5b5"/>
+
+        <ellipse cx="400" cy="414" rx="45" ry="10"
+                 fill="#f4e4c5"/>
+
+        <g fill="none" stroke="#f0ffff"
+           stroke-width="3" opacity=".9">
+
+            <path d="M400 414Q350 358 340 437"/>
+            <path d="M400 414Q450 358 460 437"/>
+            <path d="M400 414Q400 330 400 359"/>
+
+        </g>
+
+        ${[25,245,555,775].map(x=>`
+
+            <rect x="${x-5}" y="335"
+                  width="10" height="85"
+                  fill="#745d45"/>
+
+            <ellipse cx="${x}" cy="310"
+                     rx="24" ry="75"
+                     fill="#45684c"/>
+
+            <ellipse cx="${x-6}" cy="300"
+                     rx="12" ry="55"
+                     fill="#78936e"/>
+
+        `).join("")}
+
+        ${[40,90,140,190,610,660,710,760].map((x,i)=>
+            roseSVG(x,480+(i%2)*15,17)
+        ).join("")}
+
+    `);
+
+}
+
+/* 드레스 색상 변경 일러스트 */
+
+const dressColours=[
+
+    {name:"Royal Ivory",colour:"#e9dcc4",dark:"#bda98b"},
+    {name:"Rose Pearl",colour:"#d8a6b8",dark:"#a87993"},
+    {name:"Royal Lavender",colour:"#a982a9",dark:"#785c86"},
+    {name:"Emerald Green",colour:"#769c87",dark:"#416c57"},
+    {name:"Royal Burgundy",colour:"#88425e",dark:"#542b40"}
+
+];
+
+function dressSVG(index=1){
+
+    const c=dressColours[index]||dressColours[1];
+
+    return frameSVG(`
+
+        <path d="M175 540V145
+                 Q400 -65 625 145V540Z"
+              fill="#f8e8d5"
+              stroke="GOLD"
+              stroke-width="12"/>
+
+        <path d="M208 540V160
+                 Q400 -20 592 160V540Z"
+              fill="none"
+              stroke="#b89b60"
+              stroke-width="2"/>
+
+        <path d="M0 0H185Q155 185 55 290L0 305Z"
+              fill="#95607c"/>
+
+        <path d="M800 0H615Q645 185 745 290L800 305Z"
+              fill="#95607c"/>
+
+        <g fill="none"
+           stroke="#d8b77f"
+           stroke-width="4">
+
+            <path d="M40 0Q65 150 15 270"/>
+            <path d="M90 0Q100 155 50 260"/>
+            <path d="M760 0Q735 150 785 270"/>
+            <path d="M710 0Q700 155 750 260"/>
+
+        </g>
+
+        <ellipse cx="400" cy="490" rx="220" ry="25"
+                 fill="#92747644"/>
+
+        <path d="M377 90H423V130
+                 L450 150L430 232H370L350 150L377 130Z"
+              fill="#e1bda6"/>
+
+        <path d="M348 138Q375 112 400 157
+                 Q425 112 452 138L430 232H370Z"
+              fill="${c.colour}"
+              stroke="${c.dark}"
+              stroke-width="3"/>
+
+        <path d="M350 143Q300 115 305 176
+                 Q332 201 366 166"
+              fill="${c.colour}"
+              stroke="${c.dark}"
+              stroke-width="2"/>
+
+        <path d="M450 143Q500 115 495 176
+                 Q468 201 434 166"
+              fill="${c.colour}"
+              stroke="${c.dark}"
+              stroke-width="2"/>
+
+        <path d="M370 230Q275 290 205 477
+                 Q400 537 595 477
+                 Q525 290 430 230Z"
+              fill="${c.colour}"
+              stroke="${c.dark}"
+              stroke-width="3"/>
+
+        ${Array.from({length:11},(_,i)=>`
+
+            <path d="M${373+i*5} 235
+                     Q${290+i*22} 350
+                     ${220+i*36} 484"
+                  fill="none"
+                  stroke="${i%2?"#fff0df":c.dark}"
+                  opacity=".6"
+                  stroke-width="2"/>
+
+        `).join("")}
+
+        <path d="M365 222Q400 238 435 222
+                 L430 241Q400 252 370 241Z"
+              fill="GOLD"/>
+
+        <path d="M400 235
+                 Q300 200 308 267
+                 Q355 282 400 240
+                 Q445 282 492 267
+                 Q500 200 400 235Z"
+              fill="#f3ddd9"
+              stroke="${c.dark}"
+              stroke-width="2"/>
+
+        <ellipse cx="400" cy="238" rx="12" ry="15"
+                 fill="GOLD"/>
+
+        ${Array.from({length:19},(_,i)=>`
+
+            <circle cx="${236+i*18}"
+                    cy="${480+Math.sin(i/18*Math.PI)*26}"
+                    r="4"
+                    fill="#fff5df"
+                    stroke="#b89b60"/>
+
+        `).join("")}
+
+        <g transform="translate(350 20)">
+
+            <path d="M0 50L-8 15L23 30L50 0
+                     L77 30L108 15L100 50Z"
+                  fill="GOLD"
+                  stroke="#a17b40"/>
+
+            <rect y="50" width="100" height="9"
+                  fill="GOLD"/>
+
+            <ellipse cx="50" cy="30" rx="9" ry="12"
+                     fill="${c.dark}"/>
+
+        </g>
+
+        ${roseSVG(140,440,30)}
+        ${roseSVG(660,440,30)}
+
+    `,"#dac5c3");
+
+}
+
+/* 티타임 */
+
+function teaSVG(){
+
+    return frameSVG(`
+
+        <rect y="365" width="800" height="175"
+              fill="PAPER"/>
+
+        <path d="M0 0Q220 130 800 35V0Z"
+              fill="#bf91a5"/>
+
+        <ellipse cx="400" cy="420" rx="295" ry="65"
+                 fill="#92747622"/>
+
+        <path d="M205 285Q135 205 90 260
+                 Q155 282 185 350Z"
+              fill="#fff4df"
+              stroke="#b89b60"
+              stroke-width="3"/>
+
+        <path d="M405 270Q515 240 490 350
+                 Q480 388 415 350"
+              fill="none"
+              stroke="#b89b60"
+              stroke-width="13"/>
+
+        <ellipse cx="310" cy="306" rx="120" ry="101"
+                 fill="#fff6e8"
+                 stroke="#b89b60"
+                 stroke-width="4"/>
+
+        <ellipse cx="310" cy="211" rx="85" ry="18"
+                 fill="GOLD"/>
+
+        <path d="M240 210Q310 140 380 210Z"
+              fill="#fff6e8"
+              stroke="#b89b60"
+              stroke-width="3"/>
+
+        <circle cx="310" cy="165" r="13" fill="GOLD"/>
+
+        ${roseSVG(275,280,20)}
+        ${roseSVG(340,310,20)}
+
+        <ellipse cx="570" cy="430" rx="151" ry="28"
+                 fill="#fff4df"
+                 stroke="#b89b60"
+                 stroke-width="3"/>
+
+        <path d="M670 323Q745 300 738 360
+                 Q730 405 675 390"
+              fill="none"
+              stroke="#b89b60"
+              stroke-width="13"/>
+
+        <path d="M460 320Q470 420 570 420
+                 Q670 420 680 320Z"
+              fill="#fff7e8"
+              stroke="#b89b60"
+              stroke-width="4"/>
+
+        <ellipse cx="570" cy="320" rx="110" ry="27"
+                 fill="#f9e8cc"
+                 stroke="#b89b60"
+                 stroke-width="3"/>
+
+        <ellipse cx="570" cy="324" rx="100" ry="19"
+                 fill="#ac784e"/>
+
+        ${roseSVG(535,360,15)}
+        ${roseSVG(605,362,15)}
+
+        <g fill="none" stroke="#fff8ed"
+           stroke-width="5" opacity=".7">
+
+            <path d="M540 290Q510 250 550 220
+                     Q575 190 550 160"/>
+
+            <path d="M595 290Q620 250 595 220
+                     Q570 185 600 155"/>
+
+        </g>
+
+        ${roseSVG(95,430,32)}
+        ${roseSVG(710,450,26)}
+
+    `,"#e8cdd7");
+
+}
+
+/* 다양한 공간의 내장 일러스트 */
+
+function makeArt(type){
+
+    if(type==="palace")return palaceSVG();
+    if(type==="dress")return dressSVG(1);
+    if(type==="tea")return teaSVG();
+
+    if(type==="crown"){
+
+        return frameSVG(`
+
+            <ellipse cx="400" cy="430" rx="310" ry="60"
+                     fill="#241623"/>
+
+            <path d="M120 375Q400 300 680 375
+                     L715 450Q400 505 85 450Z"
+                  fill="#874963"
+                  stroke="GOLD"
+                  stroke-width="4"/>
+
+            <g transform="translate(130 35) scale(1.6)">
+
+                ${crownParts([0,1,2])}
+
+            </g>
+
+        `,"#352333");
+
+    }
+
+    if(type==="letter"){
+
+        return frameSVG(`
+
+            <rect x="35" y="30" width="730" height="480"
+                  fill="PAPER"
+                  stroke="GOLD"
+                  stroke-width="4"/>
+
+            <g transform="translate(130 70) rotate(-7 220 150)">
+
+                <rect width="440" height="300"
+                      fill="#fff3dc"
+                      stroke="#b89b60"
+                      stroke-width="2"/>
+
+                <text x="220" y="50"
+                      font-family="Georgia"
+                      font-size="27"
+                      font-style="italic"
+                      text-anchor="middle"
+                      fill="#87536e">
+
+                    My Dearest
+
+                </text>
+
+                ${Array.from({length:7},(_,i)=>`
+
+                    <path d="M60 ${85+i*24}H380"
+                          stroke="#ba9f7e"/>
+
+                `).join("")}
+
+            </g>
+
+            <g transform="translate(260 240) rotate(6 200 110)">
+
+                <rect width="400" height="220"
+                      fill="#e3c8a5"
+                      stroke="#b89b60"
+                      stroke-width="3"/>
+
+                <path d="M0 220L200 75L400 220Z"
+                      fill="#d6b894"/>
+
+                <path d="M0 0L200 145L400 0Z"
+                      fill="#fff0d3"
+                      stroke="#b89b60"/>
+
+                <circle cx="200" cy="145" r="38"
+                        fill="#77394f"
+                        stroke="#bf8f7c"
+                        stroke-width="4"/>
+
+                <text x="200" y="155"
+                      font-family="Georgia"
+                      font-size="28"
+                      text-anchor="middle"
+                      fill="#eed6a1">JE</text>
+
+            </g>
+
+            ${roseSVG(110,385,39)}
+            ${roseSVG(180,430,31)}
+            ${roseSVG(670,100,35)}
+
+        `,"#c5a3ae");
+
+    }
+
+    if(type==="library"){
+
+        return frameSVG(`
+
+            ${[25,285,545].map(x=>`
+
+                <g transform="translate(${x} 25)">
+
+                    <rect width="230" height="460"
+                          fill="#714e40"
+                          stroke="GOLD"
+                          stroke-width="5"/>
+
+                    ${Array.from({length:4},(_,r)=>`
+
+                        <rect x="10" y="${15+r*110}"
+                              width="210" height="98"
+                              fill="#382b2c"/>
+
+                        ${Array.from({length:10},(_,c)=>`
+
+                            <rect x="${15+c*20}"
+                                  y="${22+r*110+(c%3)*8}"
+                                  width="16"
+                                  height="${85-(c%3)*8}"
+                                  fill="${[
+                                      "#935e73",
+                                      "#587560",
+                                      "#aa8650",
+                                      "#78878e"
+                                  ][c%4]}"
+                                  stroke="#bca16c"/>
+
+                            <path d="M${18+c*20} ${39+r*110}h10"
+                                  stroke="#e5cba0"/>
+
+                        `).join("")}
+
+                        <rect x="5" y="${105+r*110}"
+                              width="220" height="10"
+                              fill="GOLD"/>
+
+                    `).join("")}
+
+                </g>
+
+            `).join("")}
+
+            <rect y="490" width="800" height="50"
+                  fill="#af9479"/>
+
+            <ellipse cx="400" cy="493" rx="175" ry="30"
+                     fill="#92616f"/>
+
+            <path d="M280 440Q400 415 520 440
+                     L505 480H295Z"
+                  fill="PAPER"
+                  stroke="#b89b60"
+                  stroke-width="3"/>
+
+            <path d="M400 440V480"
+                  stroke="#b89b60"
+                  stroke-width="2"/>
+
+        `,"#483039");
+
+    }
+
+    if(type==="music"){
+
+        return frameSVG(`
+
+            <path d="M170 540V120
+                     Q400 -40 630 120V540Z"
+                  fill="#f8e7d0"
+                  stroke="GOLD"
+                  stroke-width="8"/>
+
+            <g transform="translate(130 180)">
+
+                <path d="M0 60Q280 -110 540 50V165H0Z"
+                      fill="#3b2936"
+                      stroke="GOLD"
+                      stroke-width="4"/>
+
+                <rect y="165" width="540" height="65"
+                      fill="#2c222b"/>
+
+                ${Array.from({length:27},(_,i)=>`
+
+                    <rect x="${5+i*19.6}" y="170"
+                          width="18" height="57"
+                          fill="#fff5df"
+                          stroke="#a98e76"/>
+
+                `).join("")}
+
+                ${Array.from({length:26},(_,i)=>
+                    i%7===2||i%7===6?"":`
+
+                        <rect x="${18+i*19.6}" y="170"
+                              width="12" height="34"
+                              fill="#322730"/>
+
+                    `
+                ).join("")}
+
+                <path d="M20 230V335M520 230V335"
+                      stroke="#3c2935"
+                      stroke-width="17"/>
+
+            </g>
+
+            <g fill="#a07a40"
+               font-family="Georgia"
+               font-size="55">
+
+                <text x="200" y="125">♪</text>
+                <text x="385" y="95">♫</text>
+                <text x="550" y="130">♪</text>
+
+            </g>
+
+            ${roseSVG(80,440,30)}
+            ${roseSVG(720,440,30)}
+
+        `,"#d7bdc7");
+
+    }
+
+    if(type==="ballet"){
+
+        return frameSVG(`
+
+            <path d="M125 540V130
+                     Q400 -70 675 130V540Z"
+                  fill="#faecde"
+                  stroke="GOLD"
+                  stroke-width="8"/>
+
+            <g fill="none"
+               stroke="#bd8ba3"
+               stroke-width="17"
+               stroke-linecap="round">
+
+                <path d="M330 200Q170 90 315 55
+                         Q475 30 330 200
+                         Q435 55 520 85"/>
+
+                <path d="M478 210Q650 75 510 45
+                         Q370 55 478 210
+                         Q340 80 230 95"/>
+
+            </g>
+
+            ${[290,430].map((x,i)=>`
+
+                <g transform="translate(${x} 155)
+                              rotate(${i?-12:13})">
+
+                    <path d="M0 25Q45 -20 90 25
+                             L110 240Q55 300 0 240Z"
+                          fill="#d3a2b6"
+                          stroke="#a87b91"
+                          stroke-width="3"/>
+
+                    <ellipse cx="45" cy="45"
+                             rx="30" ry="36"
+                             fill="#a4778b"/>
+
+                    <path d="M13 210Q55 231 99 210"
+                          fill="none"
+                          stroke="#f5dce1"
+                          stroke-width="4"/>
+
+                </g>
+
+            `).join("")}
+
+            ${roseSVG(180,430,30)}
+            ${roseSVG(620,430,30)}
+
+        `,"#e3c8d3");
+
+    }
+
+    if(type==="jewelry"){
+
+        return frameSVG(`
+
+            <rect x="25" y="25"
+                  width="750" height="490"
+                  fill="none"
+                  stroke="GOLD"
+                  stroke-width="3"/>
+
+            ${Array.from({length:35},(_,i)=>{
+
+                const a=Math.PI*.12+i/34*Math.PI*.76;
+
+                return `
+
+                    <circle
+                        cx="${400+235*Math.cos(a)}"
+                        cy="${45+350*Math.sin(a)}"
+                        r="15"
+                        fill="#fff3df"
+                        stroke="#b89b60"
+                        stroke-width="2"/>
+
+                `;
+
+            }).join("")}
+
+            <path d="M400 380L445 440
+                     L400 505L355 440Z"
+                  fill="#bc81a0"
+                  stroke="GOLD"
+                  stroke-width="7"/>
+
+            <path d="M400 380L385 440
+                     L400 505L415 440Z"
+                  fill="#fff"
+                  opacity=".35"/>
+
+            ${roseSVG(130,420,28)}
+            ${roseSVG(675,420,28)}
+
+        `,"#56394d");
+
+    }
+
+    if(type==="throne"){
+
+        return frameSVG(`
+
+            <path d="M160 540V145Q400 -55 640 145V540Z"
+                  fill="#f0dcc0"
+                  stroke="GOLD"
+                  stroke-width="10"/>
+
+            <path d="M0 0H185Q150 190 0 300Z"
+                  fill="#6c344e"/>
+
+            <path d="M800 0H615Q650 190 800 300Z"
+                  fill="#6c344e"/>
+
+            <ellipse cx="400" cy="470" rx="210" ry="35"
+                     fill="#ad8c69"/>
+
+            <path d="M285 360V175Q400 45 515 175V360Z"
+                  fill="#8b4a67"
+                  stroke="GOLD"
+                  stroke-width="14"/>
+
+            <path d="M315 340V185Q400 90 485 185V340Z"
+                  fill="#b16c88"
+                  stroke="#c4a36a"
+                  stroke-width="3"/>
+
+            ${Array.from({length:5},(_,i)=>`
+
+                <path d="M${320+i*40} 180L${480-i*40} 340"
+                      stroke="#d5a3b6"
+                      stroke-width="1.5"/>
+
+            `).join("")}
+
+            <rect x="265" y="345" width="270" height="60"
+                  rx="15"
+                  fill="#8c4b67"
+                  stroke="GOLD"
+                  stroke-width="8"/>
+
+            <path d="M280 395L265 465
+                     M520 395L535 465"
+                  stroke="GOLD"
+                  stroke-width="18"/>
+
+            <path d="M265 310H225V390H265
+                     M535 310H575V390H535"
+                  fill="none"
+                  stroke="GOLD"
+                  stroke-width="12"/>
+
+            <g transform="translate(330 35) scale(.4)">
+
+                ${crownParts([0,1,2])}
+
+            </g>
+
+            ${roseSVG(120,440,32)}
+            ${roseSVG(680,440,32)}
+
+        `,"#443147");
+
+    }
+
+    return frameSVG(`
+
+        <rect width="800" height="540" fill="PAPER"/>
+
+        <ellipse cx="400" cy="480" rx="180" ry="25"
+                 fill="#ac907744"/>
+
+        <path d="M315 290H485L460 475
+                 Q400 500 340 475Z"
+              fill="#fff3e0"
+              stroke="GOLD"
+              stroke-width="5"/>
+
+        ${[
+            [260,170,43],
+            [350,120,48],
+            [440,130,48],
+            [530,180,42],
+            [320,230,46],
+            [420,225,52],
+            [495,250,38]
+        ].map(p=>roseSVG(p[0],p[1],p[2])).join("")}
+
+    `);
+
+}
+
+/* 사진은 일러스트 위에 로딩 성공 시에만 표시 */
+
+function initializeArt(){
+
+    document.querySelectorAll(".art").forEach(box=>{
+
+        box.innerHTML=makeArt(box.dataset.art||"rose");
+
+        const sources=[
+            box.dataset.local,
+            box.dataset.photo
+        ].filter(Boolean);
+
+        let index=0;
+
+        function loadNext(){
+
+            if(index>=sources.length)return;
+
+            const image=new Image();
+
+            image.alt=box.dataset.art+" 이미지";
+
+            image.onload=()=>{
+
+                box.appendChild(image);
+                image.classList.add("loaded");
+
+            };
+
+            image.onerror=loadNext;
+
+            image.src=sources[index++];
+
+        }
+
+        loadNext();
+
+    });
+
+}
+
+/* ======================================
+   게임 데이터 및 자동 저장
+====================================== */
+
+const rooms=[
+
+    ["profile","황실 기록실","Profile","♔"],
+    ["about","황후의 일기장","About Me","✒"],
+    ["interests","황실 서재","Interests","▤"],
+    ["strengths","왕관 보물실","Strengths","♦"],
+    ["hobbies","프라이빗 살롱","Hobbies","♨"],
+    ["style","황실 드레스룸","Style","❦"],
+    ["ideal","비밀 서신실","Ideal Type","✉"],
+    ["garden","황후의 비밀 정원","Secret Garden","✿"],
+    ["goal","미래의 왕좌","My Goal","✧"]
+
+];
+
+const roman=[
+    "I","II","III","IV","V","VI","VII","VIII","IX"
+];
+
+const tasks=[
+
+    "황실 프로필을 확인하고 인장을 찍어주세요.",
+    "일기장의 네 가지 페이지를 모두 펼쳐보세요.",
+    "황후의 관심 분야를 확인해 주세요.",
+    "왕관의 세 가지 보석을 모두 장착하세요.",
+    "차와 디저트를 선택하고 초대장을 받으세요.",
+    "황실 드레스의 색상을 선택하세요.",
+    "밀랍 봉인을 열어 비밀 서신을 확인하세요.",
+    "비밀 정원의 네 송이 장미를 피워주세요.",
+    "황실의 마지막 시험을 모두 통과하세요."
+
+];
+
+const storageKey="JuEunSecretGarden2026";
+
+function freshState(){
+
+    return {
+
+        guest:"",
+        stamps:[],
+        diary:[],
+        gems:[],
+        flowers:[],
+        tea:"",
+        dessert:"",
+        teaDone:false,
+        dress:null,
+        letterRead:false,
+        quizPassed:false
+
+    };
+
+}
+
+let state=freshState();
+
+try{
+
+    const saved=JSON.parse(localStorage.getItem(storageKey));
+
+    if(saved && typeof saved==="object"){
+
+        state={...freshState(),...saved};
+
+        const arrays={
+            stamps:9,
+            diary:4,
+            gems:3,
+            flowers:4
+        };
+
+        Object.entries(arrays).forEach(([key,max])=>{
+
+            state[key]=Array.isArray(state[key])
+                ? [...new Set(state[key].filter(
+                    n=>Number.isInteger(n)&&n>=0&&n<max
+                ))]
+                : [];
+
+        });
+
+    }
+
+}catch(e){
+
+    state=freshState();
+
+}
+
+function save(){
+
+    try{
+
+        localStorage.setItem(
+            storageKey,
+            JSON.stringify(state)
+        );
+
+    }catch(e){}
+
+}
+
+function canCollect(i){
+
+    if(i===1)return state.diary.length===4;
+    if(i===3)return state.gems.length===3;
+    if(i===4)return state.teaDone;
+    if(i===5)return state.dress!==null;
+    if(i===6)return state.letterRead;
+    if(i===7)return state.flowers.length===4;
+    if(i===8)return state.quizPassed;
+
+    return true;
+
+}
+
+state.stamps=state.stamps.filter(canCollect);
+
+/* ======================================
+   황실 귀빈 등록
+====================================== */
+
+function openInvitation(){
+
+    document.getElementById("guestInput").value=state.guest;
+
+    document.getElementById("invitationDialog").showModal();
+
+}
+
+document.getElementById("guestForm")
+    .addEventListener("submit",function(e){
+
+        e.preventDefault();
+
+        const name=document.getElementById("guestInput")
+            .value.trim();
+
+        if(!name){
+
+            notify("황실 귀빈의 이름을 입력해 주세요.");
+            return;
+
+        }
+
+        state.guest=name;
+
+        save();
+        renderQuest();
+
+        document.getElementById("invitationDialog").close();
+
+        notify(name+" 님, 황궁에 오신 것을 환영합니다.");
+
+        document.getElementById("passport")
+            .scrollIntoView({behavior:"smooth"});
+
+    });
+
+/* ======================================
+   황실 여권 및 인장
+====================================== */
+
+function collectStamp(i){
+
+    if(state.stamps.includes(i))return;
+
+    if(!canCollect(i)){
+
+        notify(tasks[i]);
+        return;
+
+    }
+
+    state.stamps.push(i);
+
+    save();
+    renderQuest();
+
+    if(state.stamps.length===9){
+
+        notify("♔ 모든 황실 인장을 획득했습니다!");
+
+        document.getElementById("ending")
+            .scrollIntoView({behavior:"smooth"});
+
+    }else{
+
+        notify(rooms[i][1]+"의 황실 인장 획득!");
+
+    }
+
+}
+
+function renderQuest(){
+
+    const count=state.stamps.length;
+
+    const guest=state.guest||"이름 없는 황실 귀빈";
+
+    document.getElementById("visitorDisplay")
+        .textContent=guest;
+
+    document.getElementById("visitorRank").textContent=
+        count===9?"황실 명예 방문객 · Guest of Honour":
+        count>=6?"황실의 친애하는 귀빈":
+        count>=3?"황궁의 특별 방문객":
+        "황궁의 초대객";
+
+    document.getElementById("navCount").textContent=
+        count+" / 9";
+
+    document.getElementById("passportCount").textContent=
+        "황실 인장 "+count+" / 9";
+
+    document.getElementById("navProgress").style.width=
+        count/9*100+"%";
+
+    document.getElementById("passportGrid").innerHTML=
+
+        rooms.map((room,i)=>`
+
+            <a href="#${room[0]}"
+               class="room-card ${
+                   state.stamps.includes(i)?"collected":""
+               }">
+
+                <small>CHAMBER ${roman[i]}</small>
+
+                <div class="room-stamp">${room[3]}</div>
+
+                <strong>${room[1]}</strong>
+
+                <div class="english">${room[2]}</div>
+
+                <div class="room-state">
+
+                    ${state.stamps.includes(i)
+                        ?"✓ 인장 획득 완료"
+                        :"공간 탐험하기"}
+
+                </div>
+
+            </a>
+
+        `).join("");
+
+    const next=rooms.findIndex(
+        (_,i)=>!state.stamps.includes(i)
+    );
+
+    document.getElementById("questHint").textContent=
+        next===-1
+        ?"모든 황실 공간 탐험 완료!"
+        :"다음 추천 탐험: "+rooms[next][1];
+
+    document.querySelectorAll(".stamp-zone").forEach(zone=>{
+
+        const i=Number(zone.dataset.room);
+
+        const collected=state.stamps.includes(i);
+
+        zone.innerHTML=`
+
+            <p>${tasks[i]}</p>
+
+            <button class="stamp-button ${collected?"done":""}"
+                    onclick="collectStamp(${i})"
+                    ${collected||!canCollect(i)?"disabled":""}>
+
+                ${collected
+                    ?"✓ 황실 인장 획득 완료"
+                    :canCollect(i)
+                    ?"❦ 황실 인장 찍기"
+                    :"◇ 미션 완료 후 인장 획득"}
+
+            </button>
+
+        `;
+
+    });
+
+    document.getElementById("lockedEnding").hidden=count===9;
+
+    document.getElementById("unlockedEnding").hidden=count!==9;
+
+    document.getElementById("remainingCount").textContent=
+        "남은 황실 인장 "+(9-count)+"개";
+
+    document.getElementById("endingGreeting").textContent=
+        guest+" 님께 황후의 깊은 감사와 존경을 전합니다.";
+
+    renderGems();
+    renderTea();
+    renderDress();
+    renderGarden();
+
+}
+
+/* ======================================
+   황후의 일기장
+====================================== */
+
+const diaryPages=[
+
+    {
+
+        title:"My Personality",
+
+        text:[
+            "저는 새로운 것을 배우고 알아가는 과정에서 즐거움을 느낍니다. 익숙한 것에만 머무르기보다 다양한 경험을 통해 조금씩 성장하는 사람이 되고 싶습니다.",
+
+            "또한 사람들과 수다를 떨며 일상을 공유하는 시간을 좋아합니다. 소소한 이야기부터 진지한 고민까지 함께 나누는 과정에서 사람들과 가까워지는 즐거움을 느낍니다.",
+
+            "해야 할 일에는 책임감을 가지고 임하면서도 일상의 작은 즐거움과 여유를 잊지 않으려 합니다."
+        ]
+
+    },
+
+    {
+
+        title:"My University Life",
+
+        text:[
+            "단국대학교 간호학과에서 공부하며 인간의 신체와 건강, 질병과 회복에 대한 전문적인 지식을 배우고 있습니다.",
+
+            "간호학은 단순히 지식을 암기하는 것뿐 아니라 배운 내용을 실제 상황에 적용하고 사람의 건강과 안전을 고려해야 하는 학문이라고 생각합니다.",
+
+            "대학 생활 동안 전공 역량을 쌓고 다양한 사람들과 협력하며 미래의 간호사로서 필요한 전문성과 소통 능력을 발전시키고 싶습니다."
+        ]
+
+    },
+
+    {
+
+        title:"People & Relationships",
+
+        text:[
+            "저에게 사람과의 관계는 일상을 더욱 풍요롭게 만들어 주는 소중한 부분입니다. 서로의 이야기를 나누고 생각을 공유하는 시간을 좋아합니다.",
+
+            "상대방의 마음을 이해하려 노력하고 서로 다른 생각도 존중할 수 있는 사람이 되고 싶습니다.",
+
+            "함께하는 관계에서는 진심과 배려, 신뢰를 중요하게 생각합니다. 따뜻한 대화를 통해 누군가에게 좋은 기억을 남기는 사람이 되고 싶습니다."
+        ]
+
+    },
+
+    {
+
+        title:"My Personal Values",
+
+        text:[
+            "저는 배움과 성실함, 다정함과 신뢰를 소중한 가치로 생각합니다. 외적인 아름다움뿐 아니라 내면의 지성과 따뜻함도 함께 갖추고 싶습니다.",
+
+            "여성스럽고 우아한 취향을 좋아하지만, 저만의 목표를 향해 꾸준히 나아가는 당당함 역시 중요하다고 생각합니다.",
+
+            "미래에는 전문적인 역량을 갖추면서도 사람의 마음을 이해하고 존중할 수 있는 사람이 되는 것이 저의 바람입니다."
+        ]
+
+    }
+
+];
+
+function openDiary(i){
+
+    const page=diaryPages[i];
+
+    document.getElementById("diaryPage").innerHTML=`
+
+        <div class="page-number">
+            PRIVATE DIARY · PAGE ${roman[i]}
+        </div>
+
+        <h3>${page.title}</h3>
+
+        <div class="ornament">❦</div>
+
+        ${page.text.map(t=>`<p>${t}</p>`).join("")}
+
+        <div class="diary-sign">Ju Eun</div>
+
+    `;
+
+    document.querySelectorAll(".diary-tab").forEach(b=>{
+
+        b.classList.toggle("active",Number(b.dataset.page)===i);
+
+    });
+
+    if(!state.diary.includes(i)){
+
+        state.diary.push(i);
+        save();
+
+    }
+
+    document.getElementById("diaryCount").textContent=
+        "발견한 일기장 페이지 "+state.diary.length+" / 4";
+
+    renderQuest();
+
+}
+
+/* ======================================
+   왕관 보석 복원
+====================================== */
+
+function collectGem(i){
+
+    if(state.gems.includes(i))return;
+
+    state.gems.push(i);
+
+    save();
+    renderQuest();
+
+    notify(
+        state.gems.length===3
+        ?"♔ 황후의 왕관 복원 완료!"
+        :["책임감의 루비","공감의 에메랄드","협업의 사파이어"][i]
+          +" 장착 완료!"
+    );
+
+}
+
+function renderGems(){
+
+    document.getElementById("restorationCrown").innerHTML=
+        crownSVG(state.gems);
+
+    document.getElementById("gemCount").textContent=
+        "보석 복원 "+state.gems.length+" / 3";
+
+    document.getElementById("gemProgress").style.width=
+        state.gems.length/3*100+"%";
+
+    document.querySelectorAll(".gem-button").forEach(b=>{
+
+        const i=Number(b.dataset.gem);
+
+        b.disabled=state.gems.includes(i);
+
+        b.textContent=b.disabled
+            ?"✓ 장착 완료"
+            :["루비","에메랄드","사파이어"][i]+" 장착하기";
+
+    });
+
+    document.getElementById("crownComplete").hidden=
+        state.gems.length!==3;
+
+}
+
+/* ======================================
+   맞춤형 티타임
+====================================== */
+
+function chooseTea(button){
+
+    const kind=button.dataset.kind;
+
+    state[kind]=button.dataset.value;
+
+    save();
+    renderTea();
+
+}
+
+function renderTea(){
+
+    document.querySelectorAll(".tea-choice").forEach(b=>{
+
+        b.classList.toggle(
+            "active",
+            state[b.dataset.kind]===b.dataset.value
+        );
+
+    });
+
+    document.getElementById("teaSelection").textContent=
+        (state.tea||"차 미선택")
+        +" · "+
+        (state.dessert||"디저트 미선택");
+
+}
+
+function openTea(){
+
+    if(!state.tea||!state.dessert){
+
+        notify("차와 디저트를 모두 선택해 주세요.");
+        return;
+
+    }
+
+    document.getElementById("teaGuest").textContent=
+        (state.guest||"황실 귀빈")+" 님께 보내는 특별한 초대장";
+
+    document.getElementById("invitedTea").textContent=
+        state.tea;
+
+    document.getElementById("invitedDessert").textContent=
+        state.dessert;
+
+    state.teaDone=true;
+
+    save();
+    renderQuest();
+
+    document.getElementById("teaDialog").showModal();
+
+}
+
+/* ======================================
+   드레스 디자인
+====================================== */
+
+function chooseDress(i){
+
+    state.dress=i;
+
+    save();
+    renderQuest();
+
+    notify(dressColours[i].name+" 드레스가 완성되었습니다.");
+
+}
+
+function renderDress(){
+
+    const index=state.dress===null?1:state.dress;
+
+    document.getElementById("dressPreview").innerHTML=
+        dressSVG(index);
+
+    document.getElementById("dressMessage").textContent=
+        state.dress===null
+        ?"드레스 컬러를 선택해 주세요."
+        :"완성된 황실 드레스: "+dressColours[index].name;
+
+    document.querySelectorAll(".colour-choice").forEach(b=>{
+
+        b.classList.toggle(
+            "active",
+            state.dress===Number(b.dataset.colour)
+        );
+
+    });
+
+}
+
+/* ======================================
+   비밀 서신
+====================================== */
+
+function toggleLetter(){
+
+    const letter=document.getElementById("secretLetter");
+    const envelope=document.getElementById("envelope");
+
+    const opening=letter.hidden;
+
+    letter.hidden=!opening;
+
+    envelope.classList.toggle("opened",opening);
+
+    envelope.setAttribute("aria-expanded",opening);
+
+    document.getElementById("letterButton").textContent=
+        opening?"편지 다시 봉인하기":"밀랍 봉인 열기 · Break the Seal";
+
+    if(opening){
+
+        state.letterRead=true;
+
+        save();
+        renderQuest();
+
+        notify("황후의 비밀 서신을 발견했습니다.");
+
+        letter.scrollIntoView({
+            behavior:"smooth",
+            block:"nearest"
+        });
+
+    }
+
+}
+
+/* ======================================
+   비밀 정원의 장미
+====================================== */
+
+function gardenSVG(){
+
+    const flowerColours=[
+        "#d8a6b6","#e5d2b7","#a18db4","#bf6d91"
+    ];
+
+    return frameSVG(`
+
+        <rect width="800" height="540" fill="SKY"/>
+
+        <circle cx="670" cy="70" r="45"
+                fill="#fff0c0"/>
+
+        <path d="M0 280Q200 180 400 270
+                 T800 250V540H0Z"
+              fill="#9cae8e"/>
+
+        <rect y="300" width="800" height="240"
+              fill="#78936d"/>
+
+        <!-- 황실 정원 아치 -->
+
+        <path d="M300 300V145Q400 30 500 145V300"
+              fill="none"
+              stroke="#e8d6b2"
+              stroke-width="18"/>
+
+        <path d="M310 300V150Q400 50 490 150V300"
+              fill="none"
+              stroke="#b89b60"
+              stroke-width="2"/>
+
+        ${Array.from({length:8},(_,i)=>
+
+            roseSVG(
+                i%2?480:320,
+                105+Math.floor(i/2)*47,
+                12,
+                "#d1a1b5"
+            )
+
+        ).join("")}
+
+        <path d="M360 300H440L540 540H260Z"
+              fill="#e6d5b6"/>
+
+        <ellipse cx="400" cy="350" rx="83" ry="25"
+                 fill="#a9d2d0"
+                 stroke="#ead9b8"
+                 stroke-width="7"/>
+
+        <path d="M400 350V306
+                 M400 310Q375 270 365 325
+                 M400 310Q425 270 435 325"
+              stroke="#f2ffff"
+              stroke-width="3"
+              fill="none"/>
+
+        ${[100,265,535,700].map((x,i)=>`
+
+            <ellipse cx="${x}" cy="495"
+                     rx="64" ry="18"
+                     fill="#455e43"/>
+
+            <g transform="translate(${x} 0)">
+
+                <path d="M-45 440H45L30 510H-30Z"
+                      fill="#e9d7ba"
+                      stroke="GOLD"
+                      stroke-width="4"/>
+
+                <ellipse cy="440" rx="45" ry="10"
+                         fill="#775e4c"/>
+
+            </g>
+
+            ${roseSVG(
+                x,
+                state.flowers.includes(i)?332:365,
+                state.flowers.includes(i)?36:23,
+                flowerColours[i],
+                state.flowers.includes(i)
+            )}
+
+            ${state.flowers.includes(i)?`
+
+                <text x="${x-45}" y="280"
+                      fill="#fff3d2" font-size="20">✦</text>
+
+                <text x="${x+35}" y="315"
+                      fill="#fff3d2" font-size="16">✧</text>
+
+            `:""}
+
+        `).join("")}
+
+    `);
+
+}
+
+function bloomFlower(i){
+
+    if(state.flowers.includes(i))return;
+
+    state.flowers.push(i);
+
+    save();
+    renderQuest();
+
+    notify(
+        state.flowers.length===4
+        ?"❦ 비밀 정원의 모든 장미가 피어났습니다."
+        :["배움","다정함","성실함","신뢰"][i]+"의 장미가 피어났습니다."
+    );
+
+}
+
+function renderGarden(){
+
+    document.getElementById("gardenPreview").innerHTML=
+        gardenSVG();
+
+    document.getElementById("gardenCount").textContent=
+        "피어난 장미 "+state.flowers.length+" / 4";
+
+    document.querySelectorAll(".flower-button").forEach(b=>{
+
+        b.disabled=state.flowers.includes(
+            Number(b.dataset.flower)
+        );
+
+        b.textContent=b.disabled
+            ?"✓ 개화 완료"
+            :"장미 피우기";
+
+    });
+
+    document.getElementById("gardenComplete").hidden=
+        state.flowers.length!==4;
+
+}
+
+/* ======================================
+   황실 최종 시험
+====================================== */
+
+const questions=[
+
+    {
+
+        q:"황후가 재학 중인 학과는 어디일까요?",
+
+        a:["디자인학과","간호학과","경영학과"],
+
+        correct:1,
+
+        explanation:"단국대학교 간호학과 2학년입니다."
+
+    },
+
+    {
+
+        q:"황후가 좋아하는 네 가지 취미는 무엇일까요?",
+
+        a:[
+            "음악, 여행, 발레, 티타임",
+            "등산, 낚시, 축구, 게임",
+            "요리, 사진, 수영, 캠핑"
+        ],
+
+        correct:0,
+
+        explanation:"음악 감상, 여행, 발레, 티타임을 좋아합니다."
+
+    },
+
+    {
+
+        q:"황후의 왕관을 완성하는 세 가지 강점은?",
+
+        a:[
+            "경쟁심, 독립심, 완벽주의",
+            "자신감, 운동 능력, 창의력",
+            "책임감, 공감 능력, 협업 능력"
+        ],
+
+        correct:2,
+
+        explanation:"세 가지 보석은 책임감, 공감 능력, 협업 능력을 뜻합니다."
+
+    },
+
+    {
+
+        q:"황후가 선호하는 패션 분위기는 무엇일까요?",
+
+        a:[
+            "여성스럽고 우아한 에겐녀 스타일",
+            "스포티한 운동복 스타일",
+            "강렬한 스트리트 스타일"
+        ],
+
+        correct:0,
+
+        explanation:"여성스럽고 로맨틱하며 우아한 분위기를 선호합니다."
+
+    },
+
+    {
+
+        q:"황후가 꿈꾸는 미래의 간호사는?",
+
+        a:[
+            "기술에만 집중하는 간호사",
+            "디지털 기술과 공감 능력을 갖춘 간호사",
+            "혼자 모든 일을 처리하는 간호사"
+        ],
+
+        correct:1,
+
+        explanation:"디지털 기술을 잘 활용하면서 환자의 마음을 이해하고 신뢰받는 간호사가 되는 것이 목표입니다."
+
+    }
+
+];
+
+let questionIndex=0;
+let answered=false;
+
+function renderQuiz(){
+
+    const question=document.getElementById("quizQuestion");
+    const options=document.getElementById("quizOptions");
+
+    document.getElementById("nextQuestion").hidden=true;
+
+    document.getElementById("quizMessage").textContent="";
+
+    if(state.quizPassed){
+
+        question.innerHTML=`
+            <p style="color:#416f54;text-align:center;">
+                ♔ 황실의 마지막 시험을 통과했습니다!
+            </p>
+        `;
+
+        options.innerHTML="";
+
+        return;
+
+    }
+
+    answered=false;
+
+    const q=questions[questionIndex];
+
+    question.innerHTML=`
+
+        <p style="font-size:12px;color:#92703b;">
+            FINAL TRIAL ${questionIndex+1} / ${questions.length}
+        </p>
+
+        <p><strong>${q.q}</strong></p>
+
+    `;
+
+    options.innerHTML=q.a.map((answer,i)=>`
+
+        <button class="quiz-option"
+                onclick="answerQuiz(${i},this)">
+
+            ${roman[i]}. ${answer}
+
+        </button>
+
+    `).join("");
+
+}
+
+function answerQuiz(i,button){
+
+    if(answered)return;
+
+    const q=questions[questionIndex];
+
+    const message=document.getElementById("quizMessage");
+
+    if(i!==q.correct){
+
+        button.classList.add("wrong");
+        button.disabled=true;
+
+        message.textContent="아쉽습니다. 다시 선택해 보세요.";
+
+        message.style.color="#a15b70";
+
+        return;
+
+    }
+
+    answered=true;
+
+    button.classList.add("correct");
+
+    document.querySelectorAll(".quiz-option")
+        .forEach(b=>b.disabled=true);
+
+    message.textContent="정답입니다! "+q.explanation;
+    message.style.color="#416f54";
+
+    if(questionIndex===questions.length-1){
+
+        state.quizPassed=true;
+
+        save();
+        renderQuest();
+
+        notify("♔ 황실 최종 시험 통과!");
+
+    }else{
+
+        document.getElementById("nextQuestion").hidden=false;
+
+    }
+
+}
+
+function advanceQuiz(){
+
+    if(!answered||state.quizPassed)return;
+
+    questionIndex++;
+    renderQuiz();
+
+}
+
+/* ======================================
+   최종 증서
+====================================== */
+
+function issueCertificate(){
+
+    if(state.stamps.length!==9)return;
+
+    document.getElementById("certificateName").textContent=
+        state.guest||"황실 명예 방문객";
+
+    document.getElementById("certificate").hidden=false;
+
+    document.getElementById("certificate")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    notify("♔ 황실 명예 방문객 증서 발급 완료!");
+
+}
+
+function printCertificate(){
+
+    document.body.classList.add("print-certificate");
+
+    window.print();
+
+    document.body.classList.remove("print-certificate");
+
+}
+
+window.addEventListener("afterprint",()=>{
+
+    document.body.classList.remove("print-certificate");
+
+});
+
+/* ======================================
+   초기화
+====================================== */
+
+function resetQuest(){
+
+    if(!confirm("황실 탐험 기록을 모두 초기화하시겠습니까?"))
+        return;
+
+    state=freshState();
+
+    questionIndex=0;
+    answered=false;
+
+    document.getElementById("secretLetter").hidden=true;
+
+    document.getElementById("envelope")
+        .classList.remove("opened");
+
+    document.getElementById("envelope")
+        .setAttribute("aria-expanded","false");
+
+    document.getElementById("letterButton").textContent=
+        "밀랍 봉인 열기 · Break the Seal";
+
+    document.getElementById("certificate").hidden=true;
+
+    save();
+
+    openDiary(0);
+    renderQuest();
+    renderQuiz();
+
+    notify("황실 탐험 기록을 초기화했습니다.");
+
+}
+
+/* 알림 */
+
+let toastTimer;
+
+function notify(message){
+
+    const toast=document.getElementById("toast");
+
+    toast.textContent=message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer=setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+/* 황금빛 별 */
+
+function createSparkles(){
+
+    const container=document.getElementById("sparkles");
+
+    for(let i=0;i<35;i++){
+
+        const star=document.createElement("span");
+
+        star.className="sparkle";
+
+        star.textContent=i%2?"✧":"✦";
+
+        star.style.left=Math.random()*100+"%";
+
+        star.style.top=Math.random()*100+"%";
+
+        star.style.fontSize=8+Math.random()*15+"px";
+
+        star.style.animationDelay=Math.random()*5+"s";
+
+        container.appendChild(star);
+
+    }
+
+}
+
+/* ======================================
+   프로그램 시작
+====================================== */
+
+initializeArt();
+
+createSparkles();
+
+document.getElementById("heroCrown").innerHTML=
+    crownSVG([0,1,2]);
+
+document.getElementById("endingCrown").innerHTML=
+    crownSVG([0,1,2]);
+
+document.getElementById("certificateCrown").innerHTML=
+    crownSVG([0,1,2]);
+
+openDiary(0);
+
+renderQuest();
+
+renderQuiz();
+
+</script>
+
+</body>
+</html>
